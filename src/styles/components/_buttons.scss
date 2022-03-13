@@ -1,6 +1,6 @@
 @use '../root/colors';
 
-$fontSize: 1.2rem;
+$fontSize: 2rem;
 
 @mixin button($color) {
   font-size: $fontSize;
