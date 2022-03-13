@@ -1,6 +1,6 @@
 import { MouseEventHandler, ReactNode } from 'react';
 
-import '../styles/components/_buttons.scss';
+import 'styles/components/_buttons.scss';
 
 interface Props {
   onClick?: MouseEventHandler;
