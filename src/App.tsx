@@ -1,6 +1,7 @@
+import Layout from 'components/Layout/Layout';
 
 const App: React.FC = () => {
-return <div className={`app`}></div>;
+  return <Layout></Layout>;
 };
 
 export default App;
