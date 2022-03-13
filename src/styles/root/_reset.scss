@@ -1,0 +1,79 @@
+@use 'colors';
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+img,
+strong,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+::selection,
+::-moz-selection,
+::-webkit-selection {
+  background: colors.$selection;
+  color: colors.$selectionText;
+}
+
+:focus {
+  color: colors.$focus;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background: colors.$background;
+}
+
+nav ul {
+  list-style: none;
+}
+
+input {
+  vertical-align: middle;
+}
