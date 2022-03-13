@@ -1,10 +1,13 @@
 @use '../root/colors';
 
+$fontSize: 1.2rem;
+
 @mixin button($color) {
-  font-size: 2rem;
+  font-size: $fontSize;
   cursor: pointer;
   background: $color;
   padding: 10px 15px;
+  border: none;
   &:hover {
     background: darken($color, 10);
   }
@@ -20,19 +23,24 @@
     background: $color;
   }
   &.sm {
-    font-size: 1.6rem;
+    font-size: $fontSize / 1.2;
     padding: 8px 12px;
-    &.outline,
-    &.link {
-      padding: 6px 10px;
+    &.outline {
+      padding: 10px 15px;
     }
   }
   &.lg {
-    font-size: 2.4rem;
-    padding: 15px 20px;
-    &.outline,
-    &.link {
-      padding: 13px 18px;
+    font-size: $fontSize / 0.8;
+    padding: 10px 15px;
+    &.outline {
+      padding: 10px 15px;
+    }
+  }
+  &.xl {
+    font-size: $fontSize / 0.6;
+    padding: 15px 25px;
+    &.outline {
+      padding: 10px 15px;
     }
   }
   &.rounded {
@@ -40,12 +48,14 @@
   }
   &.link {
     color: $color;
-    padding: 8px 13px;
+    padding: 0;
     border: 2px solid $color;
+    border: none;
     background: #ffffff00;
     &:hover {
       color: darken($color, 15);
       border: 2px solid darken($color, 15);
+      border: none;
     }
   }
 }
@@ -60,4 +70,8 @@
 
 .btn.link {
   @include button(colors.$primary);
+}
+
+.btn.white {
+  color: colors.$whiteText;
 }
