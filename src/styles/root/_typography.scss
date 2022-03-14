@@ -1,5 +1,5 @@
+@use './colors';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
-@use 'colors';
 
 body {
   font-family: 'Poppins', arial, sans-serif;
@@ -38,4 +38,8 @@ button {
   font-size: 1.8rem;
   display: block;
   line-height: 1.5;
+}
+
+.title {
+  color: colors.$primary;
 }
