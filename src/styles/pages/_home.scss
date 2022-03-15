@@ -12,7 +12,9 @@
 .hero .description {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
   margin-right: 100px;
+  height: 175px;
 }
 
 .imageContainer {
