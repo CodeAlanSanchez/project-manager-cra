@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className={`home`}>
       {/* Hero */}
-      <div className="hero">
+      <section className="hero">
         <div className="description">
           <h1 className="title">#1 Project Manager</h1>
           <h5>The first for developers!</h5>
@@ -17,9 +17,10 @@ const Home: React.FC = () => {
         <div className="imageContainer">
           <img src="/collaboration.png" alt="collaboration" />
         </div>
-      </div>
+      </section>
+      <hr />
       {/* Features */}
-      <div className="features">
+      <section className="features">
         <div className="item">
           <h5>Track Bugs</h5>
           <p>
@@ -34,7 +35,7 @@ const Home: React.FC = () => {
             and finish on time!
           </p>
         </div>
-      </div>
+      </section>
       <div className="item">
         <h5>Finish</h5>
         <p>
@@ -43,14 +44,15 @@ const Home: React.FC = () => {
           <br />
         </p>
       </div>
+      <hr />
       {/* Goals */}
-      <div className="goal">
+      <section className="goal">
         <h3>Focus</h3>
         <p>
           Don&apos;t worry about managing your project. Focus on getting work
           done. Sign up and start now!
         </p>
-      </div>
+      </section>
     </div>
   );
 };
