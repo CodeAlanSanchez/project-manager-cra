@@ -87,5 +87,6 @@ a:visited {
 }
 
 a:hover {
-  color: colors.$primary;
+  color: darken(colors.$primary, 25);
+  text-decoration: underline dashed;
 }
