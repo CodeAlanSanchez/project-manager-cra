@@ -1,0 +1,25 @@
+@use '../root/colors';
+
+.footer {
+  background: colors.$tertiary;
+  padding: 0 25%;
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: colors.$white;
+    min-height: 320px;
+    padding-top: 75px;
+    .heading {
+      color: colors.$primary;
+      font-weight: 500;
+      font-size: 2rem;
+    }
+    .link {
+      font-size: 1.6rem;
+      color: #81afff;
+      line-height: 2;
+    }
+  }
+}
