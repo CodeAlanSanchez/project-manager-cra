@@ -21,33 +21,37 @@ const Home: React.FC = () => {
       <hr />
       {/* Features */}
       <section className="features">
-        <div className="item">
-          <h5>Track Bugs</h5>
-          <p>
-            Create, assign, complete. <br />
-            It&apos;s as simple as that!
-          </p>
-        </div>
-        <div className="item">
-          <h5>Set Goals</h5>
-          <p>
-            Add deadlines, create events, <br />
-            and finish on time!
-          </p>
+        <h2>Feature
+        </h2>
+        <div className="items">
+          <div className="item">
+            <h5>Track Bugs</h5>
+            <p>
+              Create, assign, complete. <br />
+              It&apos;s as simple as that!
+            </p>
+          </div>
+          <div className="item">
+            <h5>Set Goals</h5>
+            <p>
+              Add deadlines, create events, <br />
+              and finish on time!
+            </p>
+          </div>
+          <div className="item">
+            <h5>Finish</h5>
+            <p>
+              Finish current tasks then <br />
+              update everyone.
+              <br />
+            </p>
+          </div>
         </div>
       </section>
-      <div className="item">
-        <h5>Finish</h5>
-        <p>
-          Finish current tasks then <br />
-          update everyone.
-          <br />
-        </p>
-      </div>
       <hr />
       {/* Goals */}
       <section className="goal">
-        <h3>Focus</h3>
+        <h2>Focus</h2>
         <p>
           Don&apos;t worry about managing your project. Focus on getting work
           done. Sign up and start now!
