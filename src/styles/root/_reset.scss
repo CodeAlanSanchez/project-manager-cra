@@ -81,3 +81,11 @@ input {
 a {
   text-decoration: none;
 }
+
+a:visited {
+  color: colors.$primary;
+}
+
+a:hover {
+  color: colors.$primary;
+}
