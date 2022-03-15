@@ -1,0 +1,24 @@
+.home {
+}
+
+.hero {
+  padding: 200px 15%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .description {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 100px;
+}
+
+.imageContainer {
+  width: 600px;
+}
+
+.imageContainer img {
+  width: 100%;
+}

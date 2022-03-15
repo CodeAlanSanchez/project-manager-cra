@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar {
+  height: 100%;
+  padding: 15px 16.5%;
+  box-shadow: 0 3px 5px #00000030;
+}
+
+.navbar .list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.listItem:first-child {
+  flex: auto;
+}
+
+.listItem {
+  margin: 0 65px 0 0;
+}
