@@ -1,26 +1,55 @@
-.home {
-}
+@use '../root/colors';
 
 .hero {
-  padding: 200px 15%;
+  padding: 150px 15%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  .description {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-top: 100px;
+    height: 175px;
+  }
+  .imageContainer {
+    width: 600px;
+  }
+  .imageContainer img {
+    width: 100%;
+  }
 }
 
-.hero .description {
+.features,
+.goal {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
-  margin-right: 100px;
-  height: 175px;
+  margin: 200px 0;
+  h2 {
+    color: colors.$secondary;
+    text-align: center;
+    margin-bottom: 75px;
+  }
+  .items {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    .item {
+      margin: 0 50px;
+      text-align: center;
+    }
+  }
 }
 
-.imageContainer {
-  width: 600px;
-}
-
-.imageContainer img {
-  width: 100%;
+.goal {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  h2 {
+    margin-bottom: 75px;
+  }
+  p {
+    width: 500px;
+  }
 }
