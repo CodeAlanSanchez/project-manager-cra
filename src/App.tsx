@@ -1,6 +1,5 @@
 import Layout from 'components/Layout/Layout';
-import { Home } from 'pages';
-import Projects from 'pages/Projects';
+import { Home, Projects } from 'pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App: React.FC = () => {
