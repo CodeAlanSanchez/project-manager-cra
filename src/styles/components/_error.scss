@@ -4,4 +4,11 @@
   background: colors.$errorBackground;
   color: colors.$errorColor;
   border: 2px solid colors.$errorColor;
+  width: 450px;
+  padding: 15px;
+  text-align: center;
+  margin: 0 auto;
+  p {
+    font-size: 2.2rem;
+  }
 }
