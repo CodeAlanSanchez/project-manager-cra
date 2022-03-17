@@ -1,4 +1,5 @@
 import { getProjects } from 'actions/projectActions';
+import AuthForm from 'components/AuthForm';
 import ErrorResult from 'components/Error';
 import { Project } from 'components/Project';
 import { useAppDispatch, useAppSelector } from 'hooks';
@@ -15,7 +16,12 @@ const Projects: React.FC = () => {
   }, [dispatch]);
 
   if (error) {
-    return <ErrorResult error={error}></ErrorResult>;
+    return (
+      <>
+        <ErrorResult error={error} />
+        <AuthForm />
+      </>
+    );
   }
 
   return (
