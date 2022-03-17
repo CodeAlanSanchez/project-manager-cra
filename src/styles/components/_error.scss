@@ -1,0 +1,7 @@
+@use '../root/colors';
+
+.error {
+  background: colors.$errorBackground;
+  color: colors.$errorColor;
+  border: 2px solid colors.$errorColor;
+}
