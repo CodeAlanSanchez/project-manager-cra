@@ -2,23 +2,17 @@ import * as api from '../api';
 
 export const getProjects = () => async (dispatch: any) => {
   try {
-    const { data } = await api.fetchProjects().catch((e) => {
-      const { error } = JSON.parse(e.request.response);
-      return dispatch({
-        type: 'CREATE_PROJECT_ERROR',
-        payload: {
-          code: e.request.status,
-          field: error.field,
-          message: error.message,
-        },
-      });
-    });
+    const { data } = await api.fetchProjects();
 
     if (data) {
       dispatch({ type: 'FETCH_PROJECTS', payload: data });
     }
-  } catch (error) {
-    console.error(error);
+  } catch (error: any) {
+    const { field, message } = error.response.data.error;
+    dispatch({
+      type: 'CREATE_PROJECT_ERROR',
+      payload: { field, message },
+    });
   }
 };
 
