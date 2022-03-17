@@ -2,9 +2,11 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import projectReducer from 'reducers/projectReducers';
 import authReducer from 'reducers/authReducers';
 import thunk from 'redux-thunk';
+import projectErrorReducer from 'reducers/projectErrorReducers';
 
 const reducers = combineReducers({
   projects: projectReducer,
+  projectsError: projectErrorReducer,
   auth: authReducer,
 });
 
