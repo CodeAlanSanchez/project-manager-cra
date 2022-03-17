@@ -1,15 +1,15 @@
 import 'styles/components/_error.scss';
+import ErrorResult from 'types/error';
 
 interface Props {
-  message: string;
-  code?: string;
+  error: ErrorResult;
 }
 
-const Error: React.FC<Props> = ({ message, code }: Props) => {
+const Error: React.FC<Props> = ({ error }: Props) => {
   return (
     <div className="error">
       <p>
-        {code}: {message}
+        {error.code}: {error.message}
       </p>
     </div>
   );

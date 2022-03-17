@@ -1,4 +1,8 @@
-const initialState = { message: '', code: '' };
+const initialState = {
+  code: '',
+  field: '',
+  message: '',
+};
 
 type MyReducer = typeof initialState;
 
@@ -6,8 +10,10 @@ type MyReducer = typeof initialState;
 export default (state = initialState, action: any): MyReducer => {
   switch (action.type) {
     case 'CREATE_PROJECT_ERROR':
+      console.log(action.payload);
       return {
         code: action.payload.code,
+        field: action.payload.field,
         message: action.payload.message,
       };
     case 'FETCH_PROJECT_ERROR':
