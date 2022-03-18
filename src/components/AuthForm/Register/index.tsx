@@ -35,6 +35,7 @@ const RegisterForm: React.FC<Props> = ({
       onSubmit={(e: FormEvent<HTMLFormElement>) => handleSubmit(e)}
       className="form"
     >
+      <h5 className="heading">Register</h5>
       <MyInput
         name="name"
         label="Name"
@@ -75,12 +76,17 @@ const RegisterForm: React.FC<Props> = ({
           setForm({ ...form, password_confirmation: e.target.value })
         }
       />
-      <Button type="submit" styles={{ margin: '20px 0' }} rounded sm>
-        Register
-      </Button>
+      <div className="actions">
+        <Button type="submit" styles={{ margin: '20px 0' }} rounded sm>
+          Register
+        </Button>
+      <Button type="submit" styles={{ margin: '20px 0' }} rounded outline sm>
+          Continue as Guest
+        </Button>
+      </div>
       <Button
         onClick={() => setRegister(!register)}
-        styles={{ maxWidth: '250px', textAlign: 'left' }}
+        styles={{ width: '250px', textAlign: 'left' }}
         sm
         link
       >
