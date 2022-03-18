@@ -2,21 +2,28 @@
 
 .input {
   width: 250px;
-  border: 1px solid colors.$tertiary;
-  color: colors.$secondary;
+  border: 1px solid colors.$gray;
+  border-bottom: 1px solid colors.$darkWhite;
+  color: colors.$tertiary;
   background: colors.$background;
   font-size: 1.8rem;
-  padding: 5px;
+  min-height: 40px;
+  padding: 5px 10px;
   display: block;
   margin-bottom: 15px;
-}
-
-.input::placeholder {
-  color: colors.$placeholder;
+  &::placeholder {
+    color: colors.$placeholder;
+  }
+  &:focus {
+    border: 1px solid colors.$primary;
+  }
 }
 
 .label {
   display: block;
   font-size: 2rem;
   margin-bottom: 5px;
+  &:focus {
+    color: colors.$primary;
+  }
 }
