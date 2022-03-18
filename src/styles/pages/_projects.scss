@@ -1,6 +1,8 @@
 .projects {
   min-height: 100vh;
-  padding-top: 80px;
+  .content {
+    margin-top: 80px;
+  }
 }
 
 @media screen and (max-width: 550px) {
