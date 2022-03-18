@@ -86,12 +86,12 @@ const RegisterForm: React.FC<Props> = ({
         }
       />
       <div className="actions">
-        <Button type="submit" styles={{ margin: '20px 0' }} rounded sm>
+        <Button type="submit" styles={{ margin: '0 0 20px' }} rounded sm>
           Register
         </Button>
         <Button
           onClick={() => handleGuest()}
-          styles={{ margin: '20px 0' }}
+          styles={{ margin: '0 0 20px' }}
           type="button"
           rounded
           outline
@@ -102,7 +102,7 @@ const RegisterForm: React.FC<Props> = ({
       </div>
       <Button
         onClick={() => setRegister(!register)}
-        styles={{ width: '250px', textAlign: 'left' }}
+        styles={{ width: '300px', textAlign: 'left' }}
         sm
         link
       >

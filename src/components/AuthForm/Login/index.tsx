@@ -55,12 +55,12 @@ const LoginForm: React.FC<Props> = ({
         }
       />
       <div className="actions">
-        <Button type="submit" styles={{ margin: '20px 0' }} rounded sm>
+        <Button type="submit" styles={{ margin: '0 0 20px' }} rounded sm>
           Log In
         </Button>
         <Button
           onClick={() => handleGuest()}
-          styles={{ margin: '20px 0' }}
+          styles={{ margin: '0 0 20px' }}
           type="button"
           rounded
           outline
