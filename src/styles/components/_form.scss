@@ -1,0 +1,8 @@
+@use '../root/colors';
+
+.form {
+  width: fit-content;
+  border: 1px solid colors.$tertiary;
+  background: colors.$lightGray;
+  padding: 50px 35px;
+}
