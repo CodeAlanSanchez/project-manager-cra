@@ -10,6 +10,7 @@
   min-height: 40px;
   padding: 5px 10px;
   display: block;
+  margin: 0 auto;
   margin-bottom: 15px;
   &::placeholder {
     color: colors.$placeholder;
@@ -22,12 +23,23 @@
 .label {
   display: block;
   font-size: 2rem;
+  margin: 0 auto;
   margin-bottom: 5px;
+  width: 100%;
   &:focus {
     color: colors.$primary;
   }
   &.required::after {
     content: ' *';
     color: colors.$errorColor;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .input {
+    width: 250px;
+  }
+  .label {
+    width: 250px;
   }
 }

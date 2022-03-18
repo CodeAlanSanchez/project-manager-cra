@@ -68,15 +68,15 @@ const LoginForm: React.FC<Props> = ({
         >
           Continue as Guest
         </Button>
+        <Button
+          onClick={() => setRegister(!register)}
+          styles={{ width: '250px', textAlign: 'left' }}
+          sm
+          link
+        >
+          Don't have an account? Click here to register.
+        </Button>
       </div>
-      <Button
-        onClick={() => setRegister(!register)}
-        styles={{ width: '250px', textAlign: 'left' }}
-        sm
-        link
-      >
-        Don't have an account? Click here to register.
-      </Button>
     </form>
   );
 };

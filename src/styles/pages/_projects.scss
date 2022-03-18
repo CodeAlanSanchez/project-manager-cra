@@ -2,3 +2,9 @@
   min-height: 100vh;
   padding-top: 80px;
 }
+
+@media screen and (max-width: 550px) {
+  .projects {
+    min-height: 130vh;
+  }
+}

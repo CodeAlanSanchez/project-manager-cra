@@ -10,19 +10,22 @@
   padding: 15px 16.5%;
   box-shadow: 0 3px 5px #00000030;
   background: colors.$white;
-}
-
-.navbar .list {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.listItem:first-child {
-  flex: auto;
-}
-
-.listItem {
-  margin: 0 65px 0 0;
+  .list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    .listItem {
+      margin: 0 65px 0 0;
+      color: colors.$primary;
+      & > a {
+        &:visited {
+          color: colors.$primary;
+        }
+      }
+      &:first-child {
+        flex: auto;
+      }
+    }
+  }
 }

@@ -16,7 +16,7 @@ const MyInput: React.FC<Props> = ({
   onChange,
 }: Props) => {
   return (
-    <div>
+    <>
       {label ? (
         <label className={`label ${required ? 'required' : ''}`} htmlFor={name}>
           {label}
@@ -31,7 +31,7 @@ const MyInput: React.FC<Props> = ({
         placeholder={placeholder}
         onChange={(e) => onChange(e)}
       />
-    </div>
+    </>
   );
 };
 

@@ -15,5 +15,17 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .form {
+    margin: 0 auto;
+    padding: 25px;
+    .actions {
+      max-width: 250px;
+    }
   }
 }
