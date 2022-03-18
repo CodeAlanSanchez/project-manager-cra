@@ -1,6 +1,6 @@
 import { getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
-import ErrorResult from 'components/Error';
+import Error from 'components/Error';
 import { Project } from 'components/Project';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect } from 'react';
@@ -17,10 +17,10 @@ const Projects: React.FC = () => {
 
   if (error) {
     return (
-      <>
-        <ErrorResult error={error} />
+      <div className="projects">
+        <Error error={error} />
         <AuthForm />
-      </>
+      </div>
     );
   }
 
