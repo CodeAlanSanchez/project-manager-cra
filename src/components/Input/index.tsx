@@ -4,6 +4,7 @@ interface Props {
   name: string;
   placeholder?: string;
   label?: string;
+  required?: boolean;
   onChange: Function;
 }
 
@@ -11,12 +12,13 @@ const MyInput: React.FC<Props> = ({
   name,
   placeholder,
   label,
+  required,
   onChange,
 }: Props) => {
   return (
     <div>
       {label ? (
-        <label className="label" htmlFor={name}>
+        <label className={`label ${required ? 'required' : ''}`} htmlFor={name}>
           {label}
         </label>
       ) : (

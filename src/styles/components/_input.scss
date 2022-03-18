@@ -26,4 +26,8 @@
   &:focus {
     color: colors.$primary;
   }
+  &.required::after {
+    content: ' *';
+    color: colors.$errorColor;
+  }
 }

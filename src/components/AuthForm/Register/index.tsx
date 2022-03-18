@@ -44,6 +44,7 @@ const RegisterForm: React.FC<Props> = ({
         name="name"
         label="Name"
         placeholder="Name"
+        required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, name: e.target.value })
         }
@@ -52,6 +53,7 @@ const RegisterForm: React.FC<Props> = ({
         name="email"
         label="Email"
         placeholder="Email"
+        required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, email: e.target.value })
         }
@@ -60,6 +62,7 @@ const RegisterForm: React.FC<Props> = ({
         name="username"
         label="Username"
         placeholder="Username"
+        required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, username: e.target.value })
         }
@@ -68,6 +71,7 @@ const RegisterForm: React.FC<Props> = ({
         name="username"
         label="Password"
         placeholder="Password"
+        required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, password: e.target.value })
         }
@@ -76,6 +80,7 @@ const RegisterForm: React.FC<Props> = ({
         name="password_confirmation"
         label="Confirm Password"
         placeholder="Confirm Password"
+        required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, password_confirmation: e.target.value })
         }
