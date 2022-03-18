@@ -17,32 +17,27 @@ $fontSize: 2rem;
     border: 2px solid $color;
     padding: 8px 13px;
     background: #ffffff00;
-    transition: all 1s linear;
+    transition: all 100ms linear;
   }
   &.outline:hover {
     color: #ffffff;
     background: $color;
   }
+  &.xs {
+    font-size: $fontSize/1.5;
+    padding: 6px 10px;
+  }
   &.sm {
     font-size: $fontSize / 1.2;
     padding: 8px 12px;
-    &.outline {
-      padding: 10px 15px;
-    }
   }
   &.lg {
     font-size: $fontSize / 0.8;
     padding: 10px 15px;
-    &.outline {
-      padding: 10px 15px;
-    }
   }
   &.xl {
     font-size: $fontSize / 0.6;
     padding: 15px 25px;
-    &.outline {
-      padding: 10px 15px;
-    }
   }
   &.rounded {
     border-radius: 7px;
