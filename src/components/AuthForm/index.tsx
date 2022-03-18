@@ -6,9 +6,17 @@ const AuthForm: React.FC = () => {
   const [register, setRegister] = useState(true);
   const [visible, setVisible] = useState(false);
   return register ? (
-    <RegisterForm setRegister={setRegister} setVisible={setVisible} />
+    <RegisterForm
+      register={register}
+      setRegister={setRegister}
+      setVisible={setVisible}
+    />
   ) : (
-    <LoginForm setRegister={setRegister} setVisible={setVisible} />
+    <LoginForm
+      register={register}
+      setRegister={setRegister}
+      setVisible={setVisible}
+    />
   );
 };
 
