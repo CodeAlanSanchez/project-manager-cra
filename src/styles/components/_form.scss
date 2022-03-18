@@ -2,7 +2,13 @@
 
 .form {
   width: fit-content;
-  border: 1px solid colors.$tertiary;
+  border: 1px solid colors.$darkWhite;
+  border-bottom: 2px solid colors.$gray;
   background: colors.$lightGray;
-  padding: 50px 35px;
+  padding: 50px;
+  margin: 25px auto;
+  .heading {
+    margin-bottom: 25px;
+    color: colors.$lightBlack;
+  }
 }
