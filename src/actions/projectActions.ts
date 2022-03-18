@@ -1,12 +1,15 @@
 import * as api from '../api';
 
-export const getProjects = () => async (dispatch: any) => {
+export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchProjects();
 
-    if (data) {
-      dispatch({ type: 'FETCH_PROJECTS', payload: data });
-    }
+    dispatch({
+      type: 'FETCH_PROJECTS',
+      payload: { ...data, isLoading: false },
+    });
+    
+    setLoading(false);
   } catch (error: any) {
     const { field, message } = error.response.data.error;
     dispatch({
