@@ -1,4 +1,4 @@
-import { signUp } from 'actions/authActions';
+import { signIn, signUp } from 'actions/authActions';
 import Button from 'components/Button/Button';
 import MyInput from 'components/Input';
 import { useAppDispatch } from 'hooks';
@@ -28,6 +28,10 @@ const RegisterForm: React.FC<Props> = ({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(signUp(form));
+  };
+
+  const handleGuest = () => {
+    dispatch(signIn({ identifier: 'guest', password: 'guest' }));
   };
 
   return (
@@ -80,7 +84,14 @@ const RegisterForm: React.FC<Props> = ({
         <Button type="submit" styles={{ margin: '20px 0' }} rounded sm>
           Register
         </Button>
-      <Button type="submit" styles={{ margin: '20px 0' }} rounded outline sm>
+        <Button
+          onClick={() => handleGuest()}
+          type="submit"
+          styles={{ margin: '20px 0' }}
+          rounded
+          outline
+          sm
+        >
           Continue as Guest
         </Button>
       </div>
