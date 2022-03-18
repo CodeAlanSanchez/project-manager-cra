@@ -54,6 +54,9 @@ $fontSize: 2rem;
       border: none;
     }
   }
+  &.close {
+    border: none;
+  }
 }
 
 .btn.primary {
