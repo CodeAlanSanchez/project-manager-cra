@@ -12,6 +12,7 @@ interface Props {
   lg?: boolean;
   xl?: boolean;
   children?: ReactNode;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const Button: React.FC<Props> = ({
   xl,
   styles,
   children,
+  type,
 }: Props) => {
   return (
     <button
@@ -32,6 +34,7 @@ const Button: React.FC<Props> = ({
       } ${classes ? classes : ''} ${rounded ? 'rounded' : ''} ${
         link ? 'link' : ''
       }`}
+      type={type}
       style={styles}
       onClick={onClick}
     >
