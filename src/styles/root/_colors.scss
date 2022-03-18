@@ -5,7 +5,10 @@ $tertiary: #0a1e41;
 
 $white: #ffffff;
 $black: #0f0f0f;
-$lightGray: #eeeeee;
+$lightBlack: #555555;
+$gray: #bbbbbb;
+$darkWhite: #dfdfdf;
+$lightGray: #fafafa;
 
 $text: $tertiary;
 $whiteText: $white;
@@ -20,4 +23,4 @@ $focus: $primary;
 $errorColor: #ff000070;
 $errorBackground: #ff747470;
 
-$placeholder: #000000;
+$placeholder: $black;
