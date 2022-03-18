@@ -1,5 +1,6 @@
 import Layout from 'components/Layout/Layout';
 import { Home, Projects } from 'pages';
+import Account from 'pages/Account';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import store from 'store';
@@ -12,6 +13,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </Layout>
       </Router>
