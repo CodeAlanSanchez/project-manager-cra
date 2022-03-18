@@ -86,8 +86,8 @@ const RegisterForm: React.FC<Props> = ({
         </Button>
         <Button
           onClick={() => handleGuest()}
-          type="submit"
           styles={{ margin: '20px 0' }}
+          type="button"
           rounded
           outline
           sm
