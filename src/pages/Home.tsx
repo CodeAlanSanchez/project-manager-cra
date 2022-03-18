@@ -10,7 +10,7 @@ const Home: React.FC = () => {
         <div className="description">
           <h1 className="title">#1 Project Manager</h1>
           <h5>The first for developers!</h5>
-          <Link to={'/register'}>
+          <Link to={'/account'}>
             <Button rounded>Start Now</Button>
           </Link>
         </div>
@@ -21,8 +21,7 @@ const Home: React.FC = () => {
       <hr />
       {/* Features */}
       <section className="features">
-        <h2>Feature
-        </h2>
+        <h2>Feature</h2>
         <div className="items">
           <div className="item">
             <h5>Track Bugs</h5>
