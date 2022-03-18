@@ -1,0 +1,22 @@
+@use '../root/colors';
+
+.input {
+  width: 250px;
+  border: 1px solid colors.$tertiary;
+  color: colors.$secondary;
+  background: colors.$background;
+  font-size: 1.8rem;
+  padding: 5px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.input::placeholder {
+  color: colors.$placeholder;
+}
+
+.label {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
