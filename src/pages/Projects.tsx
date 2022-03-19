@@ -27,8 +27,10 @@ const Projects: React.FC = () => {
   if (error?.field) {
     return (
       <div className="projects">
-        <Error error={error} />
-        <AuthForm />
+        <div className="content">
+          <Error error={error} />
+          <AuthForm />
+        </div>
       </div>
     );
   }
@@ -50,6 +52,7 @@ const Projects: React.FC = () => {
         ) : (
           <div>You have no projects, create one to get started!</div>
         )}
+        {projects.length}
         <Button sm rounded onClick={() => setShowDialog((prev) => !prev)}>
           New Project
         </Button>
