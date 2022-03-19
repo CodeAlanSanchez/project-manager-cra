@@ -5,6 +5,7 @@ interface Props {
   placeholder?: string;
   label?: string;
   required?: boolean;
+  type?: React.HTMLInputTypeAttribute;
   onChange: Function;
 }
 
@@ -14,6 +15,7 @@ const MyInput: React.FC<Props> = ({
   label,
   required,
   onChange,
+  type,
 }: Props) => {
   return (
     <>
@@ -26,7 +28,7 @@ const MyInput: React.FC<Props> = ({
       )}
       <input
         className="input"
-        type="text"
+        type={type}
         name={name}
         placeholder={placeholder}
         onChange={(e) => onChange(e)}
