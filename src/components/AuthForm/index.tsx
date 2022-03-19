@@ -9,12 +9,14 @@ const AuthForm: React.FC = () => {
     <RegisterForm
       register={register}
       setRegister={setRegister}
+      visible={visible}
       setVisible={setVisible}
     />
   ) : (
     <LoginForm
       register={register}
       setRegister={setRegister}
+      visible={visible}
       setVisible={setVisible}
     />
   );

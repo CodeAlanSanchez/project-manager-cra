@@ -3,18 +3,22 @@ import Button from 'components/Button/Button';
 import MyInput from 'components/Input';
 import { useAppDispatch } from 'hooks';
 import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   register: Boolean;
   setRegister: Function;
+  visible: Boolean;
   setVisible: Function;
 }
 
 const LoginForm: React.FC<Props> = ({
   register,
   setRegister,
+  visible,
   setVisible,
 }: Props) => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [form, setForm] = useState({
     identifier: '',
@@ -24,6 +28,7 @@ const LoginForm: React.FC<Props> = ({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(signIn(form));
+    navigate(0);
   };
 
   const handleGuest = () => {
@@ -45,9 +50,18 @@ const LoginForm: React.FC<Props> = ({
           setForm({ ...form, identifier: e.target.value })
         }
       />
+      <Button
+        onClick={() => setVisible((prev: Boolean) => !prev)}
+        type="button"
+        styles={{ marginBottom: '10px' }}
+        link
+      >
+        {visible ? 'Hide' : 'Show'} password
+      </Button>
       <MyInput
         name="username"
         label="Password"
+        type={visible ? 'text' : 'password'}
         required
         placeholder="Password"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

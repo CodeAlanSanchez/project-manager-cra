@@ -8,12 +8,14 @@ import 'styles/components/_form.scss';
 interface Props {
   register: Boolean;
   setRegister: Function;
+  visible: Boolean;
   setVisible: Function;
 }
 
 const RegisterForm: React.FC<Props> = ({
   register,
   setRegister,
+  visible,
   setVisible,
 }: Props) => {
   const dispatch = useAppDispatch();
@@ -67,11 +69,20 @@ const RegisterForm: React.FC<Props> = ({
           setForm({ ...form, username: e.target.value })
         }
       />
+      <Button
+        onClick={() => setVisible((prev: Boolean) => !prev)}
+        type="button"
+        styles={{ marginBottom: '10px' }}
+        link
+      >
+        {visible ? 'Hide' : 'Show'} password
+      </Button>
       <MyInput
         name="username"
         label="Password"
-        placeholder="Password"
+        type={visible ? 'text' : 'password'}
         required
+        placeholder="Password"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setForm({ ...form, password: e.target.value })
         }
@@ -79,6 +90,7 @@ const RegisterForm: React.FC<Props> = ({
       <MyInput
         name="password_confirmation"
         label="Confirm Password"
+        type={visible ? 'text' : 'password'}
         placeholder="Confirm Password"
         required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
