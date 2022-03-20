@@ -6,6 +6,8 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
+export const me = () => axiosInstance.get(`api/me`);
+
 export const fetchProjects = () => axiosInstance.get(`api/project`);
 export const fetchProject = (id: number) =>
   axiosInstance.get(`api/project/${id}`);
