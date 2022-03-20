@@ -45,9 +45,9 @@ const Projects: React.FC = () => {
         ''
       )}
       <div className="content">
-        {loading ? (
-          <div>Loading...</div>
-        ) : projects.length > 0 ? (
+        {loading && <div>Loading...</div>}
+
+        {projects.length > 0 ? (
           projects.map((p: any) => <Project key={p.id} project={p} />)
         ) : (
           <div>You have no projects, create one to get started!</div>
