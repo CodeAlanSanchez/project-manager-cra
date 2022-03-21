@@ -12,7 +12,10 @@ const reducers = combineReducers({
   authError: authErrorReducer,
 });
 
-const store = createStore(reducers, compose(applyMiddleware(thunk)));
+const composeEnhancers =
+  (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 export type RootState = ReturnType<typeof store.getState>;
 
