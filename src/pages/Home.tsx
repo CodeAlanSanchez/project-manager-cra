@@ -1,5 +1,4 @@
 import 'styles/pages/_home.scss';
-import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
 
 const Home: React.FC = () => {
@@ -10,9 +9,9 @@ const Home: React.FC = () => {
         <div className="description">
           <h1 className="title">#1 Project Manager</h1>
           <h5>The first for developers!</h5>
-          <Link to={'/account'}>
+          <a href="/account">
             <Button rounded>Start Now</Button>
-          </Link>
+          </a>
         </div>
         <div className="imageContainer">
           <img src="/collaboration.png" alt="collaboration" />
