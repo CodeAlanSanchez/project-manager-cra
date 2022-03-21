@@ -50,13 +50,12 @@ const Projects: React.FC = () => {
         {projects.length > 0 ? (
           projects.map((p: any) => <Project key={p.id} project={p} />)
         ) : (
-          <div>You have no projects, create one to get started!</div>
+          <h5>You have no projects, create one to get started!</h5>
         )}
         {projects.length}
         <Button sm rounded onClick={() => setShowDialog((prev) => !prev)}>
           New Project
         </Button>
-        <h1>{showDialog ? 'true' : 'false'}</h1>
       </div>
     </div>
   );
