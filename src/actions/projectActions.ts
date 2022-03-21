@@ -3,13 +3,12 @@ import * as api from '../api';
 export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchProjects();
+    setLoading(false);
 
     dispatch({
       type: 'FETCH_PROJECTS',
       payload: { ...data, isLoading: false },
     });
-    
-    setLoading(false);
   } catch (error: any) {
     const { field, message } = error.response.data.error;
     dispatch({
