@@ -11,9 +11,11 @@ export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchProjects();
 
+    setLoading(false);
+
     dispatch({
       type: FETCH_PROJECTS,
-      payload: [...data],
+      payload: data.projects,
     });
   } catch (error: any) {
     console.log(error);
@@ -29,7 +31,7 @@ export const getProject = (id: number) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchProject(id);
 
-    dispatch({ type: FETCH_PROJECT, payload: [...data] });
+    dispatch({ type: FETCH_PROJECT, payload: data.projects });
   } catch (error) {
     console.error(error);
   }
@@ -39,7 +41,7 @@ export const createProject = (project: any) => async (dispatch: any) => {
   try {
     const { data } = await api.createProject(project);
 
-    dispatch({ type: CREATE_PROJECT, payload: [...data] });
+    dispatch({ type: CREATE_PROJECT, payload: data.projects });
   } catch (error: any) {
     const { field, message } = error.response.data.error;
     dispatch({
@@ -54,7 +56,7 @@ export const updateProject =
     try {
       const { data } = await api.updateProject(id, project);
 
-      dispatch({ type: UPDATE_PROJECT, payload: [...data] });
+      dispatch({ type: UPDATE_PROJECT, payload: data.projects });
     } catch (error) {
       console.error(error);
     }
@@ -64,7 +66,7 @@ export const deleteProject = (id: number) => async (dispatch: any) => {
   try {
     const { data } = await api.deleteProject(id);
 
-    dispatch({ type: DELETE_PROJECT, payload: [...data] });
+    dispatch({ type: DELETE_PROJECT, payload: data.projects });
   } catch (error) {
     console.error(error);
   }
