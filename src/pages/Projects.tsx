@@ -10,11 +10,11 @@ import { useEffect, useState } from 'react';
 import 'styles/pages/_projects.scss';
 
 const Projects: React.FC = () => {
-  const projects = useAppSelector((state) => state.projects);
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
   const [showDialog, setShowDialog] = useState(false);
+  const projects = useAppSelector((state) => state.projects);
   const error = useAppSelector((state) => state.projectsError);
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getProjects(setLoading));
@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
     setShowDialog(false);
   };
 
-  if (error?.field) {
+  if (error?.field === 'authentication') {
     return (
       <div className="projects">
         <div className="content">
@@ -37,6 +37,7 @@ const Projects: React.FC = () => {
 
   return (
     <div className="projects">
+      {/* {console.log(projects)} */}
       {showDialog ? (
         <Dialog setVisible={setShowDialog}>
           <ProjectForm onSubmit={handleClose} />
@@ -45,6 +46,7 @@ const Projects: React.FC = () => {
         ''
       )}
       <div className="content">
+        {error?.field && <Error error={error} />}
         {loading && <div>Loading...</div>}
 
         {projects.length > 0 ? (
