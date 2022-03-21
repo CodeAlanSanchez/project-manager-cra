@@ -1,0 +1,27 @@
+.project {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: min(90%, 1000px);
+  .projectInfo {
+    padding: 15px;
+    h6 {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    p {
+      font-weight: 400;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 1440p) {
+  .project {
+    width: 80%;
+  }
+}

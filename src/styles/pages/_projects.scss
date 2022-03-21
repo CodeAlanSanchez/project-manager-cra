@@ -1,7 +1,16 @@
 .projects {
-  min-height: 100vh;
+  .heading {
+    margin-bottom: min(120px, 5%);
+  }
   .content {
-    margin-top: 80px;
+    padding: 120px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  button {
+    margin-top: min(120px, 5%);
   }
 }
 

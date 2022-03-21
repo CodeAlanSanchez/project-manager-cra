@@ -37,24 +37,23 @@ const Projects: React.FC = () => {
 
   return (
     <div className="projects">
-      {/* {console.log(projects)} */}
-      {showDialog ? (
+      {showDialog && (
         <Dialog setVisible={setShowDialog}>
           <ProjectForm onSubmit={handleClose} />
         </Dialog>
-      ) : (
-        ''
       )}
       <div className="content">
+        <h4 className="heading">Projects</h4>
         {error?.field && <Error error={error} />}
         {loading && <div>Loading...</div>}
 
-        {projects.length > 0 ? (
-          projects.map((p: any) => <Project key={p.id} project={p} />)
-        ) : (
-          <h5>You have no projects, create one to get started!</h5>
-        )}
-        {projects.length}
+        {projects.length > 0
+          ? projects.map((p: any) => {
+              return <Project key={p.id} project={p} />;
+            })
+          : !loading && (
+              <h5>You have no projects, create one to get started!</h5>
+            )}
         <Button sm rounded onClick={() => setShowDialog((prev) => !prev)}>
           New Project
         </Button>

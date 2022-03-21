@@ -1,3 +1,5 @@
+import 'styles/components/_project.scss';
+
 interface Props {
   project: any;
 }
@@ -5,9 +7,22 @@ interface Props {
 const Project: React.FC<Props> = ({ project }: Props) => {
   return (
     <div className="project">
-      <h4>{project.name}</h4>
-      <h6>{project.status}</h6>
-      <p>{project.description}</p>
+      <div className="projectInfo">
+        <h6 className="projectName">Name</h6>
+        <p className="projectName">{project.name}</p>
+      </div>
+      <div className="projectInfo">
+        <h6 className="projectStatus">Status</h6>
+        <p className="projectStatus">{project.status}</p>
+      </div>
+      <div className="projectInfo">
+        <h6 className="projectDescription">Description</h6>
+        <p className="projectDescription">{project.description}</p>
+      </div>
+      <div className="projectInfo">
+        <h6 className="projectOwner">Owner</h6>
+        <p className="projectOwner">{project.description}</p>
+      </div>
     </div>
   );
 };
