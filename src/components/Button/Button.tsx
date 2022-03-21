@@ -31,11 +31,9 @@ const Button: React.FC<Props> = ({
 }: Props) => {
   return (
     <button
-      className={`btn primary white ${sm ? 'sm' : ''} ${lg ? 'lg' : ''} ${
-        xl ? 'xl' : ''
-      } ${classes ? classes : ''} ${rounded ? 'rounded' : ''} ${
-        link ? 'link' : ''
-      } ${outline ? 'outline' : ''}`}
+      className={`btn primary white ${sm && 'sm'} ${lg && 'lg'} ${xl && 'xl'} ${
+        classes && classes
+      } ${rounded && 'rounded'} ${link && 'link'} ${outline && 'outline'}`}
       type={type}
       style={styles}
       onClick={onClick}
