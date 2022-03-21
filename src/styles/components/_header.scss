@@ -18,13 +18,13 @@
     .listItem {
       margin: 0 65px 0 0;
       color: colors.$primary;
+      &:first-child {
+        flex: auto;
+      }
       & > a {
         &:visited {
           color: colors.$primary;
         }
-      }
-      &:first-child {
-        flex: auto;
       }
     }
   }

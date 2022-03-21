@@ -66,6 +66,11 @@ video {
   color: colors.$focus;
 }
 
+:focus-visible {
+  z-index: 1;
+  border: 1px solid #ff0000;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
