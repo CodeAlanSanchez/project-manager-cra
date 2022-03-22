@@ -1,6 +1,18 @@
 @use './root/reset';
 @use './root/typography';
+@use './root/colors';
+@use './root/layout';
+
 @use './pages/home';
+@use './pages/account';
+@use './pages/projects';
 
 @use './components/buttons';
 @use './components/hr';
+@use './components/dialog';
+@use './components/error';
+@use './components/footer';
+@use './components/header';
+@use './components/input';
+@use './components/project';
+@use './components/form';
