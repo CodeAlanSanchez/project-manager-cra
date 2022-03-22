@@ -1,20 +1,26 @@
+@use '../root/colors';
+
 .project {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
-  width: min(90%, 1000px);
+  border: 1px solid colors.$lightGray;
+  border-bottom: 1px solid colors.$darkWhite;
+  width: min(95%, 1000px);
   .projectInfo {
     padding: 15px;
     h6 {
       font-size: 1.6rem;
       font-weight: 500;
+      color: colors.$tertiary;
     }
     p {
       font-weight: 400;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      color: colors.$secondary;
     }
     width: 20%;
   }
@@ -23,5 +29,14 @@
 @media only screen and (min-width: 1440p) {
   .project {
     width: 80%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .project {
+    max-width: 540px;
+    .projectInfo {
+      width: max(50%, 110px);
+      padding: 10px;
+    }
   }
 }
