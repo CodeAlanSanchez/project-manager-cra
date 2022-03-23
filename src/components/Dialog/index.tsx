@@ -31,8 +31,8 @@ const MyDialog: React.FC<Props> = ({ children, setVisible }: Props) => {
         styles={{
           position: 'fixed',
           margin: '0 0 0 30%',
-          width: '75px',
-          height: '75px',
+          width: '7.5rem',
+          height: '7.5rem',
           background: '#00000020',
           color: '#ffffff',
         }}

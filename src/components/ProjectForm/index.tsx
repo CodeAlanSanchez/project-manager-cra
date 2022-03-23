@@ -47,7 +47,7 @@ const ProjectForm: React.FC<Props> = ({ onSubmit }: Props) => {
           }
         />
         <div className="actions">
-          <Button type="submit" styles={{ margin: '0 0 20px' }} rounded sm>
+          <Button type="submit" styles={{ margin: '0 0 2rem' }} rounded sm>
             Create
           </Button>
         </div>

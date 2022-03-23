@@ -72,7 +72,7 @@ const RegisterForm: React.FC<Props> = ({
       <Button
         onClick={() => setVisible((prev: Boolean) => !prev)}
         type="button"
-        styles={{ marginBottom: '10px' }}
+        styles={{ marginBottom: '1rem' }}
         link
       >
         {visible ? 'Hide' : 'Show'} password
@@ -98,12 +98,12 @@ const RegisterForm: React.FC<Props> = ({
         }
       />
       <div className="actions">
-        <Button type="submit" styles={{ margin: '0 0 20px' }} rounded sm>
+        <Button type="submit" styles={{ margin: '0 0 2rem' }} rounded sm>
           Register
         </Button>
         <Button
           onClick={() => handleGuest()}
-          styles={{ margin: '0 0 20px' }}
+          styles={{ margin: '0 0 2rem' }}
           type="button"
           rounded
           outline
@@ -113,7 +113,7 @@ const RegisterForm: React.FC<Props> = ({
         </Button>
         <Button
           onClick={() => setRegister(!register)}
-          styles={{ width: '300px', textAlign: 'left' }}
+          styles={{ width: '30rem', textAlign: 'left' }}
           sm
           link
         >
