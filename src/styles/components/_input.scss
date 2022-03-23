@@ -1,14 +1,14 @@
 @use '../root/colors';
 
 .input {
-  width: 300px;
-  border: .1rem solid colors.$gray;
-  border-bottom: .1rem solid colors.$lightGray;
+  width: 30rem;
+  border: 0.1rem solid colors.$gray;
+  border-bottom: 0.1rem solid colors.$lightGray;
   color: colors.$tertiary;
   background: colors.$background;
   font-size: 1.8rem;
   min-height: 4rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   display: block;
   margin: 0 auto;
   margin-bottom: 1.5rem;
@@ -16,7 +16,7 @@
     color: colors.$placeholder;
   }
   &:focus {
-    border: .1rem solid colors.$primary;
+    border: 0.1rem solid colors.$primary;
   }
 }
 
@@ -24,7 +24,7 @@
   display: block;
   font-size: 2rem;
   margin: 0 auto;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   width: 100%;
   &:focus {
     color: colors.$primary;
