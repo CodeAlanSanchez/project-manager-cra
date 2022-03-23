@@ -1,5 +1,6 @@
 import { getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
+import AddButton from 'components/Button/AddButton';
 import Button from 'components/Button/Button';
 import Dialog from 'components/Dialog';
 import Error from 'components/Error';
@@ -54,9 +55,9 @@ const Projects: React.FC = () => {
           : !loading && (
               <h5>You have no projects, create one to get started!</h5>
             )}
-        <Button sm rounded onClick={() => setShowDialog((prev) => !prev)}>
-          New Project
-        </Button>
+        <div className="floatButton">
+          <AddButton sm onClick={() => setShowDialog((prev) => !prev)} />
+        </div>
       </div>
     </div>
   );
