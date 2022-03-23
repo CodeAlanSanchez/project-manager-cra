@@ -7,8 +7,8 @@
 
 .navbar {
   height: 100%;
-  padding: 15px 16.5%;
-  box-shadow: 0 3px 5px #00000030;
+  padding: 1.5rem 16.5%;
+  box-shadow: 0 .3rem .5rem #00000030;
   background: colors.$white;
   .list {
     display: flex;
@@ -16,7 +16,7 @@
     justify-content: flex-end;
     align-items: center;
     .listItem {
-      margin: 0 65px 0 0;
+      margin: 0 6.5rem 0 0;
       color: colors.$primary;
       &:first-child {
         flex: auto;

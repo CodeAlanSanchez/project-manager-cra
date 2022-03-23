@@ -2,21 +2,21 @@
 
 .input {
   width: 300px;
-  border: 1px solid colors.$gray;
-  border-bottom: 1px solid colors.$lightGray;
+  border: .1rem solid colors.$gray;
+  border-bottom: .1rem solid colors.$lightGray;
   color: colors.$tertiary;
   background: colors.$background;
   font-size: 1.8rem;
-  min-height: 40px;
-  padding: 5px 10px;
+  min-height: 4rem;
+  padding: .5rem 1rem;
   display: block;
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   &::placeholder {
     color: colors.$placeholder;
   }
   &:focus {
-    border: 1px solid colors.$primary;
+    border: .1rem solid colors.$primary;
   }
 }
 
@@ -24,7 +24,7 @@
   display: block;
   font-size: 2rem;
   margin: 0 auto;
-  margin-bottom: 5px;
+  margin-bottom: .5rem;
   width: 100%;
   &:focus {
     color: colors.$primary;
@@ -37,9 +37,9 @@
 
 @media screen and (max-width: 550px) {
   .input {
-    width: 250px;
+    width: 25rem;
   }
   .label {
-    width: 250px;
+    width: 25rem;
   }
 }

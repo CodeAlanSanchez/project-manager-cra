@@ -68,7 +68,7 @@ video {
 
 :focus-visible {
   z-index: 1;
-  border: 1px solid #ff0000;
+  border: .1rem solid #ff0000;
 }
 
 html {
@@ -97,4 +97,10 @@ a:visited {
 a:hover {
   color: darken(colors.$primary, 25);
   text-decoration: underline dashed;
+}
+
+@media only screen and (min-width: 3840px) {
+  html {
+    font-size: 125%;
+  }
 }

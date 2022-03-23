@@ -6,7 +6,7 @@ $fontSize: 2rem;
   font-size: $fontSize;
   cursor: pointer;
   background: $color;
-  padding: 10px 15px;
+  padding: 1rem 1rem;
   width: fit-content;
   border: none;
   &:hover {
@@ -14,8 +14,8 @@ $fontSize: 2rem;
   }
   &.outline {
     color: $color;
-    border: 1px solid $color;
-    padding: 8px 13px;
+    border: .1rem solid $color;
+    padding: .8rem 1.3rem;
     background: #ffffff00;
     transition: all 100ms linear;
   }
@@ -25,37 +25,56 @@ $fontSize: 2rem;
   }
   &.xs {
     font-size: $fontSize/1.5;
-    padding: 6px 10px;
+    padding: .6rem 1rem;
   }
   &.sm {
     font-size: $fontSize / 1.2;
-    padding: 8px 12px;
+    padding: .8rem 1.2rem;
   }
   &.lg {
     font-size: $fontSize / 0.8;
-    padding: 10px 15px;
+    padding: 1rem 1.5rem;
   }
   &.xl {
     font-size: $fontSize / 0.6;
-    padding: 15px 25px;
+    padding: 1.5rem 2.5rem;
   }
   &.rounded {
-    border-radius: 7px;
+    border-radius: .7rem;
   }
   &.link {
     color: $color;
     padding: 0;
-    border: 2px solid $color;
+    border: .2rem solid $color;
     border: none;
     background: #ffffff00;
     &:hover {
       color: darken($color, 15);
-      border: 2px solid darken($color, 15);
+      border: .2rem solid darken($color, 15);
       border: none;
     }
   }
   &.close {
     border: none;
+  }
+  &.add {
+    border-radius: 50%;
+    padding: 1rem;
+    height: 10rem;
+    width: 10rem;
+    svg {
+      fill: colors.$whiteText;
+      width: 100%;
+      height: 100%;
+    }
+    &.sm {
+      height: 7.5rem;
+      width: 7.5rem;
+    }
+    &.lg {
+      height: 12.5rem;
+      width: 12.5rem;
+    }
   }
 }
 

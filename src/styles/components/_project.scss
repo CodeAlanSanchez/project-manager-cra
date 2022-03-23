@@ -5,11 +5,11 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
-  border: 1px solid colors.$lightGray;
-  border-bottom: 1px solid colors.$darkWhite;
-  width: min(95%, 1000px);
+  border: .1rem solid colors.$lightGray;
+  border-bottom: .1rem solid colors.$darkWhite;
+  width: min(95%, 100rem);
   .projectInfo {
-    padding: 15px;
+    padding: 1.5rem;
     h6 {
       font-size: 1.6rem;
       font-weight: 500;
@@ -23,6 +23,18 @@
       color: colors.$secondary;
     }
     width: 20%;
+    .projectPriority {
+      text-transform: capitalize;
+    }
+    .low {
+      color: colors.$low;
+    }
+    .medium {
+      color: colors.$medium;
+    }
+    .high {
+      color: colors.$high;
+    }
   }
 }
 
@@ -33,10 +45,10 @@
 }
 @media only screen and (max-width: 550px) {
   .project {
-    max-width: 540px;
+    max-width: 54rem;
     .projectInfo {
-      width: max(50%, 110px);
-      padding: 10px;
+      width: max(50%, 11rem);
+      padding: 1rem;
     }
   }
 }

@@ -2,20 +2,20 @@
 
 .form {
   width: fit-content;
-  border: 1px solid colors.$lightGray;
-  border-bottom: 2px solid colors.$gray;
+  border: .1rem solid colors.$lightGray;
+  border-bottom: .2rem solid colors.$gray;
   background: colors.$darkWhite;
-  padding: 50px;
-  margin: 25px auto;
+  padding: 5rem;
+  margin: 2.5rem auto;
   .heading {
-    margin-bottom: 25px;
+    margin-bottom: 2.5rem;
     color: colors.$lightBlack;
   }
   .actions {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    max-width: 300px;
+    max-width: 30rem;
     margin: 0 auto;
   }
 }
@@ -23,9 +23,9 @@
 @media (max-width: 550px) {
   .form {
     margin: 0 auto;
-    padding: 25px;
+    padding: 2.5rem;
     .actions {
-      max-width: 250px;
+      max-width: 25rem;
     }
   }
 }

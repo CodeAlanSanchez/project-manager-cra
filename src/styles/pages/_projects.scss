@@ -1,16 +1,23 @@
+@use '../root/colors';
+
 .projects {
   .heading {
-    margin-bottom: min(120px, 5%);
+    margin-bottom: min(12rem, 5%);
   }
   .content {
-    padding: 120px 0;
+    padding: 12rem 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
   }
   button {
-    margin-top: min(120px, 5%);
+    margin-top: min(12rem, 5%);
+  }
+  .floatButton {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
   }
 }
 
