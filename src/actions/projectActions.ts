@@ -7,6 +7,13 @@ import {
 } from 'types/actions';
 import * as api from '../api';
 
+export const clearProjectsError = () => async (dispatch: any) => {
+  dispatch({
+    type: 'DELETE_PROJECT_ERROR',
+    payload: {},
+  })
+}
+
 export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchProjects();
@@ -18,7 +25,6 @@ export const getProjects = (setLoading: Function) => async (dispatch: any) => {
       payload: data.projects,
     });
   } catch (error: any) {
-    console.log(error);
     const { field, message } = error.response.data.error;
     dispatch({
       type: 'CREATE_PROJECT_ERROR',
@@ -27,15 +33,23 @@ export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   }
 };
 
-export const getProject = (id: number) => async (dispatch: any) => {
-  try {
-    const { data } = await api.fetchProject(id);
+export const getProject =
+  (id: number, setLoading: Function) => async (dispatch: any) => {
+    try {
+      const { data } = await api.fetchProject(id);
 
-    dispatch({ type: FETCH_PROJECT, payload: data.projects });
-  } catch (error) {
-    console.error(error);
-  }
-};
+      setLoading(false);
+
+      dispatch({ type: FETCH_PROJECT, payload: data.projects });
+    } catch (error: any) {
+      console.log(error);
+      const { field, message } = error.response.data.error;
+      dispatch({
+        type: 'CREATE_PROJECT_ERROR',
+        payload: { field, message },
+      });
+    }
+  };
 
 export const createProject = (project: any) => async (dispatch: any) => {
   try {

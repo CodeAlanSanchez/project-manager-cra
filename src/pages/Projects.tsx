@@ -1,4 +1,4 @@
-import { getProjects } from 'actions/projectActions';
+import { clearProjectsError, getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
 import AddButton from 'components/Button/AddButton';
 import Button from 'components/Button/Button';
@@ -24,6 +24,10 @@ const Projects: React.FC = () => {
   const handleClose = () => {
     setShowDialog(false);
   };
+
+  const clearErrors = () => {
+    dispatch(clearProjectsError());
+  }
 
   if (error?.field === 'authentication') {
     return (
