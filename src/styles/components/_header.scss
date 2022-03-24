@@ -8,7 +8,7 @@
 .navbar {
   height: 100%;
   padding: 1.5rem 16.5%;
-  box-shadow: 0 .3rem .5rem #00000030;
+  box-shadow: 0 0.3rem 0.5rem #00000030;
   background: colors.$white;
   .list {
     display: flex;
@@ -21,7 +21,10 @@
       &:first-child {
         flex: auto;
       }
-      & > a {
+      > a {
+        &:hover {
+          text-decoration: underline dashed;
+        }
         &:visited {
           color: colors.$primary;
         }

@@ -2,7 +2,7 @@
 
 .projects {
   .heading {
-    margin-bottom: min(12rem, 5%);
+    margin-bottom: 4rem;
   }
   .content {
     padding: 12rem 0;
@@ -10,9 +10,6 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-  }
-  button {
-    margin-top: min(12rem, 5%);
   }
   .floatButton {
     position: fixed;

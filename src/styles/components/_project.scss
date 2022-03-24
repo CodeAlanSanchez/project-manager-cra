@@ -5,8 +5,8 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
-  border: .1rem solid colors.$lightGray;
-  border-bottom: .1rem solid colors.$darkWhite;
+  border: 0.1rem solid colors.$lightGray;
+  border-bottom: 0.1rem solid colors.$darkWhite;
   width: min(95%, 100rem);
   .projectInfo {
     padding: 1.5rem;
@@ -35,6 +35,26 @@
     .high {
       color: colors.$high;
     }
+    &.view {
+      flex: 0 0 3rem;
+      width: fit-content;
+      padding: 0;
+      margin: auto 1.5rem;
+      button {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+    }
+    .arrow {
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: colors.$lightPrimary;
+        &:hover {
+          fill: darken(colors.$lightPrimary, 10);
+        }
+      }
+    }
   }
 }
 
@@ -48,7 +68,7 @@
     max-width: 54rem;
     .projectInfo {
       width: max(50%, 11rem);
-      padding: 1rem;
+      // padding: 1rem;
     }
   }
 }
