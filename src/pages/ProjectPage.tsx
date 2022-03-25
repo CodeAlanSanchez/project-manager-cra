@@ -11,7 +11,7 @@ const ProjectPage: React.FC<Props> = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const project = useAppSelector((state) => state.projects[0]);
+  const project = useAppSelector((state) => state.projects);
   const error = useAppSelector((state) => state.projectsError);
 
   useEffect(() => {

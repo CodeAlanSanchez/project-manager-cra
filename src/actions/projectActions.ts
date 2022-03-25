@@ -11,8 +11,8 @@ export const clearProjectsError = () => async (dispatch: any) => {
   dispatch({
     type: 'DELETE_PROJECT_ERROR',
     payload: {},
-  })
-}
+  });
+};
 
 export const getProjects = (setLoading: Function) => async (dispatch: any) => {
   try {
@@ -40,7 +40,7 @@ export const getProject =
 
       setLoading(false);
 
-      dispatch({ type: FETCH_PROJECT, payload: data.projects });
+      dispatch({ type: FETCH_PROJECT, payload: data.project });
     } catch (error: any) {
       console.log(error);
       const { field, message } = error.response.data.error;
