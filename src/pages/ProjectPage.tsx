@@ -1,6 +1,7 @@
 import { getProject } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
 import Error from 'components/Error';
+import FullProject from 'components/Project/FullProject';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -32,14 +33,7 @@ const ProjectPage: React.FC<Props> = () => {
   return (
     <div className="projectPage">
       {error?.field && <Error error={error} />}
-      {project && (
-        <>
-          <h1>{project.name}</h1>
-          <h1>{project.description}</h1>
-          <h1>{project.owner}</h1>
-          <h1>{project.status}</h1>
-        </>
-      )}
+      {project?.id && <FullProject project={project} />}
     </div>
   );
 };
