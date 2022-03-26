@@ -2,7 +2,7 @@ import 'styles/components/_table.scss';
 import { Row } from './Row';
 
 interface Props {
-  items: Array<any>;
+  items: { id: number; name: string; description: string; status: string }[];
 }
 
 const Table: React.FC<Props> = ({ items }: Props) => {
@@ -10,9 +10,9 @@ const Table: React.FC<Props> = ({ items }: Props) => {
     <div className="table">
       {items.length === 0 && <h6>No Items Found...</h6>}
       <div className="spacer" style={{ margin: '25px 0' }} />
-      {items.map((i) => (
-        <Row properties={{ ...i }} />
-      ))}
+      {items.map((i) => {
+        return <Row key={i.id} properties={i} />;
+      })}
     </div>
   );
 };

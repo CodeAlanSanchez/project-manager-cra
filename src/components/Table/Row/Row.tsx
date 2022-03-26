@@ -1,16 +1,20 @@
 import Button from 'components/Button/Button';
 
 interface Props {
-  properties: Array<any>;
+  properties: any;
   view?: boolean;
 }
 
 const Row: React.FC<Props> = ({ properties, view }: Props) => {
   return (
     <div className="row">
-      {properties.map((p) => (
-        <div className="rowItem">{p}</div>
-      ))}
+      {Object.values(properties).map((p: any) => {
+        return (
+          <div key={p.id} className="rowItem">
+            {p}
+          </div>
+        );
+      })}
       {view && (
         <div className="rowItem">
           <Button link>View&nbsp;{'>'}</Button>

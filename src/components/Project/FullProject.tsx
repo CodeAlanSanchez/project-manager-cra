@@ -42,6 +42,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
         {visible && (
           <MyDialog setVisible={() => setVisible((prev) => !prev)}>
             <MyForm
+            form={form}
               setForm={setForm}
               title="Create Bug"
               keys={{ ...keys }}
