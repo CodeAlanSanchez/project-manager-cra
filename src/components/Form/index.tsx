@@ -1,18 +1,27 @@
 import Button from 'components/Button/Button';
 import MyInput from 'components/Input';
-import { FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 interface Props {
+  form: any;
+  setForm: Function;
   title: string;
   keys: object;
   onSubmit: Function;
-  setForm: Function;
 }
 
-const MyForm: React.FC<Props> = ({ title, keys, onSubmit }: Props) => {
-  const [form, setForm] = useState({
-    ...keys,
-  });
+const MyForm: React.FC<Props> = ({
+  form,
+  setForm,
+  title,
+  keys,
+  onSubmit,
+}: Props) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,17 +32,19 @@ const MyForm: React.FC<Props> = ({ title, keys, onSubmit }: Props) => {
     <div>
       <form className="myForm" onSubmit={(e) => handleSubmit(e)}>
         <h5 className="heading">{title}</h5>
-        {Object.keys(keys).map((k: any) => (
-          <MyInput
-            key={k}
-            name={k}
-            label={k}
-            placeholder={k}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setForm({ ...form, [`${k}`]: e.target.value })
-            }
-          ></MyInput>
-        ))}
+        {Object.keys(keys).map((k: any) => {
+          return (
+            <MyInput
+              key={k}
+              name={k}
+              label={k}
+              placeholder={k}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleChange(e)
+              }
+            ></MyInput>
+          );
+        })}
         <Button type="submit" styles={{ margin: '0 0 2rem' }} rounded sm>
           Submit
         </Button>
