@@ -6,6 +6,7 @@
 @use './pages/home';
 @use './pages/account';
 @use './pages/projects';
+@use './pages/projectPage';
 
 @use './components/buttons';
 @use './components/hr';
@@ -16,3 +17,4 @@
 @use './components/input';
 @use './components/project';
 @use './components/form';
+@use './components/myForm';
