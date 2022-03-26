@@ -50,8 +50,6 @@ export const createBug =
     try {
       const { data } = await api.createBug(projectId, bug);
 
-      console.log(data);
-
       dispatch({ type: CREATE_BUG, payload: data.bug });
     } catch (error: any) {
       const { field, message } = error.response.data.error;
