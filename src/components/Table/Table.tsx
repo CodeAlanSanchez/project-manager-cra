@@ -8,6 +8,8 @@ interface Props {
 const Table: React.FC<Props> = ({ items }: Props) => {
   return (
     <div className="table">
+      {items.length === 0 && <h6>No Items Found...</h6>}
+      <div className="spacer" style={{ margin: '25px 0' }} />
       {items.map((i) => (
         <Row properties={{ ...i }} />
       ))}
