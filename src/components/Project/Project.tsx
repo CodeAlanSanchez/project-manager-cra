@@ -1,21 +1,20 @@
 import Button from 'components/Button/Button';
 import { useEffect, useState } from 'react';
-import 'styles/components/_project.scss';
 
 interface Props {
   project: any;
 }
 
 const Project: React.FC<Props> = ({ project }: Props) => {
-  const [priority, setPriority] = useState('');
+  const [priority, setPriority] = useState(['', '']);
 
   useEffect(() => {
     if (project.status === 1) {
-      setPriority('low');
+      setPriority(['low', 'On Track']);
     } else if (project.status === 2) {
-      setPriority('medium');
+      setPriority(['medium', '']);
     } else if (project.status === 3) {
-      setPriority('high');
+      setPriority(['high', 'Behind Schedule']);
     }
   }, []);
 
@@ -27,7 +26,7 @@ const Project: React.FC<Props> = ({ project }: Props) => {
       </div>
       <div className="projectInfo priority">
         <h6 className="projectPriority">Priority</h6>
-        <p className={`${priority} projectPriority`}>{priority}</p>
+        <p className={`${priority[0]} projectPriority`}>{priority[1]}</p>
       </div>
       <div className="projectInfo">
         <h6 className="projectDescription">Description</h6>
