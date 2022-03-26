@@ -6,6 +6,7 @@ interface Props {
   title: string;
   keys: Array<any>;
   onSubmit: Function;
+  setForm: Function;
 }
 
 const MyForm: React.FC<Props> = ({ title, keys, onSubmit }: Props) => {
