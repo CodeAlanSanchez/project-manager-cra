@@ -4,7 +4,7 @@ import { FormEvent, useState } from 'react';
 
 interface Props {
   title: string;
-  keys: Array<any>;
+  keys: object;
   onSubmit: Function;
   setForm: Function;
 }
@@ -23,7 +23,7 @@ const MyForm: React.FC<Props> = ({ title, keys, onSubmit }: Props) => {
     <div>
       <form className="myForm" onSubmit={(e) => handleSubmit(e)}>
         <h5 className="heading">{title}</h5>
-        {keys.map((k) => (
+        {Object.keys(keys).map((k: any) => (
           <MyInput
             key={k}
             name={k}
