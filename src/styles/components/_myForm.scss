@@ -1,0 +1,14 @@
+@use '../root/colors';
+
+.myForm {
+  width: fit-content;
+  border: 0.1rem solid colors.$lightGray;
+  border-bottom: 0.2rem solid colors.$gray;
+  background: colors.$darkWhite;
+  padding: 5rem;
+  margin: 2.5rem auto;
+  .heading {
+    margin-bottom: 2.5rem;
+    color: colors.$tertiary;
+  }
+}
