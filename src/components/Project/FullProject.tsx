@@ -31,16 +31,17 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
           )}
         </div>
         {visible && (
-          <MyDialog setVisible={() => setVisible((prev) => !prev)}></MyDialog>
+          <MyDialog setVisible={() => setVisible((prev) => !prev)}>
+            <MyForm
+              title="Create Bug"
+              keys={['name', 'description', 'status']}
+              onSubmit={handleSubmit}
+            />
+          </MyDialog>
         )}
-        <Button onClick={() => setVisible((prev) => !prev)} rounded sm>
+        <Button onClick={() => setVisible((prev) => !prev)} rounded lg>
           Create Bug
         </Button>
-        <MyForm
-          title="Create Bug"
-          keys={['name', 'description', 'status']}
-          onSubmit={handleSubmit}
-        />
       </div>
     </section>
   );
