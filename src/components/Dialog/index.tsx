@@ -30,7 +30,9 @@ const MyDialog: React.FC<Props> = ({ children, setVisible }: Props) => {
       <Button
         styles={{
           position: 'fixed',
-          margin: '0 0 0 30%',
+          // margin: '0 0 0 min(40%, 40rem)',
+          top: '10rem',
+          left: 'min(40%, 60rem)',
           width: '7.5rem',
           height: '7.5rem',
           background: '#00000020',
