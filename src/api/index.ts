@@ -20,3 +20,11 @@ export const deleteProject = (id: number) =>
 
 export const signin = (form: any) => axiosInstance.post(`api/login`, form);
 export const register = (form: any) => axiosInstance.post(`api/register`, form);
+
+export const fetchBugs = (id: any) =>
+  axiosInstance.get(`api/project/${id}/bug`);
+export const fetchBug = (id: any) => axiosInstance.get(`api/bug/${id}`);
+export const createBug = (id: any, bug: any) =>
+  axiosInstance.post(`api/project/${id}/bug`, bug);
+export const updateBug = (id: any, bug: any) =>
+  axiosInstance.put(`api/bug/${id}`, bug);
