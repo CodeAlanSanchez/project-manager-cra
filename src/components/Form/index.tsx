@@ -24,6 +24,7 @@ const MyForm: React.FC<Props> = ({ title, keys, onSubmit }: Props) => {
         <h5 className="heading">{title}</h5>
         {keys.map((k) => (
           <MyInput
+            key={k}
             name={k}
             label={k}
             placeholder={k}
