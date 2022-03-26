@@ -4,8 +4,10 @@ import authReducer from 'reducers/authReducers';
 import thunk from 'redux-thunk';
 import projectErrorReducer from 'reducers/projectErrorReducer';
 import authErrorReducer from 'reducers/authErrorReducer';
+import bugReducers from 'reducers/bugReducers';
 
 const reducers = combineReducers({
+  bugs: bugReducers,
   projects: projectReducer,
   projectsError: projectErrorReducer,
   auth: authReducer,
