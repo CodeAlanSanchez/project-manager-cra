@@ -2,6 +2,7 @@ import Button from 'components/Button/Button';
 import MyDialog from 'components/Dialog';
 import MyForm from 'components/Form';
 import { Table } from 'components/Table';
+import { useAppDispatch } from 'hooks';
 import { useState } from 'react';
 
 interface Props {
@@ -9,10 +10,16 @@ interface Props {
 }
 
 const FullProject: React.FC<Props> = ({ project }: Props) => {
+  const dispatch = useAppDispatch();
+  const keys = ['name', 'description', 'status'];
+  const [form, setForm] = useState({
+    ...keys,
+  });
   const [showBug, setShowBug] = useState(true);
   const [visible, setVisible] = useState(false);
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+  };
 
   return (
     <section className="projectPage">
@@ -33,8 +40,9 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
         {visible && (
           <MyDialog setVisible={() => setVisible((prev) => !prev)}>
             <MyForm
+              setForm={setForm}
               title="Create Bug"
-              keys={['name', 'description', 'status']}
+              keys={keys}
               onSubmit={handleSubmit}
             />
           </MyDialog>
