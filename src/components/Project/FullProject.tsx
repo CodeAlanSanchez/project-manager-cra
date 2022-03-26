@@ -1,3 +1,4 @@
+import { createBug } from 'actions/bugActions';
 import Button from 'components/Button/Button';
 import MyDialog from 'components/Dialog';
 import MyForm from 'components/Form';
@@ -11,7 +12,7 @@ interface Props {
 
 const FullProject: React.FC<Props> = ({ project }: Props) => {
   const dispatch = useAppDispatch();
-  const keys = ['name', 'description', 'status'];
+  const keys = { name: '', description: '', status: '' };
   const [form, setForm] = useState({
     ...keys,
   });
@@ -19,6 +20,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
   const [visible, setVisible] = useState(false);
 
   const handleSubmit = () => {
+    dispatch(createBug(project.id, form));
   };
 
   return (
@@ -42,7 +44,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             <MyForm
               setForm={setForm}
               title="Create Bug"
-              keys={keys}
+              keys={{ ...keys }}
               onSubmit={handleSubmit}
             />
           </MyDialog>
