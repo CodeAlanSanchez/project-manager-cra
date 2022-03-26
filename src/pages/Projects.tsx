@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
 
   const clearErrors = () => {
     dispatch(clearProjectsError());
-  }
+  };
 
   if (error?.field === 'authentication') {
     return (
