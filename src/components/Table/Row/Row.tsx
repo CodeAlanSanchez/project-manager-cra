@@ -11,7 +11,7 @@ const Row: React.FC<Props> = ({ properties, view }: Props) => {
       {Object.values(properties).map((p: any) => {
         return (
           <div key={p} className="rowItem">
-            {p}
+            <p>{p}</p>
           </div>
         );
       })}
