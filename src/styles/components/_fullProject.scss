@@ -1,8 +1,13 @@
 .projectThing {
-    .projectTabs {
-
+  .projectTabs {
+  }
+  .projectContent {
+    .actions {
+      display: flex;
+      flex-flow: row nowrap;
+      width: min(90%, 50rem);
+      margin: 0 auto;
+      justify-content: space-around;
     }
-    .projectContent {
-        
-    }
+  }
 }
