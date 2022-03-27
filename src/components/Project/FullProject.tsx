@@ -18,6 +18,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
   });
   const [showBug, setShowBug] = useState(true);
   const [visible, setVisible] = useState(false);
+  const users = project.members.map((m: any) => m.user);
 
   const handleSubmit = () => {
     dispatch(createBug(project.id, form));
@@ -33,6 +34,19 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
           </ul>
         </div> */}
         <div className="projectContent">
+          <div className="actions">
+            <Button onClick={() => setShowBug(true)} link>
+              Bugs
+            </Button>
+            <Button
+              onClick={() => {
+                setShowBug(false);
+              }}
+              link
+            >
+              Members
+            </Button>
+          </div>
           {showBug ? (
             <>
               <h4 style={{ margin: '1.2rem auto', textAlign: 'center' }}>
@@ -45,7 +59,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
               <h4 style={{ margin: '1.2rem auto', textAlign: 'center' }}>
                 Members
               </h4>
-              <Table items={project.members} />
+              <Table items={users} />
             </>
           )}
         </div>
@@ -60,6 +74,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             />
           </MyDialog>
         )}
+        {console.log(users)}
         <Button
           styles={{ margin: '8rem auto' }}
           onClick={() => setVisible((prev) => !prev)}
