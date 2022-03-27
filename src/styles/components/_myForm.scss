@@ -12,3 +12,26 @@
     color: colors.$tertiary;
   }
 }
+
+.table {
+  width: min(90%, 120rem);
+  margin: auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(33%, 33rem));
+  width: 100%;
+  border: 0.1rem solid colors.$lightGray;
+  border-bottom: 0.1rem solid colors.$darkWhite;
+  margin-bottom: 0.5rem;
+  .rowItem {
+    padding: 1.5rem;
+    p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: colors.$secondary;
+    }
+  }
+}
