@@ -27,12 +27,6 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
   return (
     <section className="projectPage">
       <div className="projectThing">
-        {/* <div className="projectTabs">
-          <ul>
-            <li>Issues</li>
-            <li>Members</li>
-          </ul>
-        </div> */}
         <div className="projectContent">
           <div className="actions">
             <Button onClick={() => setShowBug(true)} link>
@@ -48,19 +42,9 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             </Button>
           </div>
           {showBug ? (
-            <>
-              <h4 style={{ margin: '1.2rem auto', textAlign: 'center' }}>
-                Bugs
-              </h4>
-              <Table items={project.bugs} />
-            </>
+            <Table title="Bugs" items={project.bugs} />
           ) : (
-            <>
-              <h4 style={{ margin: '1.2rem auto', textAlign: 'center' }}>
-                Members
-              </h4>
-              <Table items={users} />
-            </>
+            <Table title="Members" items={users} />
           )}
         </div>
         {visible && (
@@ -74,7 +58,6 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             />
           </MyDialog>
         )}
-        {console.log(users)}
         <Button
           styles={{ margin: '8rem auto' }}
           onClick={() => setVisible((prev) => !prev)}

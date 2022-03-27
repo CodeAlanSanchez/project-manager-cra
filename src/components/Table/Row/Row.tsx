@@ -3,11 +3,12 @@ import Button from 'components/Button/Button';
 interface Props {
   properties: any;
   view?: boolean;
+  fields?: boolean;
 }
 
-const Row: React.FC<Props> = ({ properties, view }: Props) => {
+const Row: React.FC<Props> = ({ fields, properties, view }: Props) => {
   return (
-    <div className="row">
+    <div className={`${fields && 'fields'} row`}>
       {Object.values(properties).map((p: any) => {
         return (
           <div key={p} className="rowItem">

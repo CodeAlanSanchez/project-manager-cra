@@ -25,13 +25,24 @@
   border: 0.1rem solid colors.$lightGray;
   border-bottom: 0.1rem solid colors.$darkWhite;
   margin-bottom: 0.5rem;
+  &.fields {
+    border: none;
+    .rowItem {
+      p {
+        font-weight: 500;
+        color: colors.$secondary;
+        text-transform: capitalize;
+        font-size: 2rem;
+      }
+    }
+  }
   .rowItem {
     padding: 1.5rem;
     p {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      color: colors.$secondary;
+      color: colors.$tertiary;
     }
   }
 }

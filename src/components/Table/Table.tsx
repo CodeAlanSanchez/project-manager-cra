@@ -1,19 +1,31 @@
-import 'styles/components/_table.scss';
 import { Row } from './Row';
 
 interface Props {
-  items: { id: number; name: string; description: string; status: string }[];
+  items: any[];
+  title?: any;
 }
 
-const Table: React.FC<Props> = ({ items }: Props) => {
+const Table: React.FC<Props> = ({ title, items }: Props) => {
+  if (items.length === 0) {
+    return (
+      <>
+        {title && <h4 className="tableHeading">{title}</h4>}
+        <p style={{ margin: '2.5rem auto', width: 'fit-content' }}>
+          No Items Found...
+        </p>
+      </>
+    );
+  }
   return (
-    <div className="table">
-      {items.length === 0 && <h6>No Items Found...</h6>}
-      <div className="spacer" style={{ margin: '25px 0' }} />
-      {items.map((i) => {
-        return <Row key={i.id} properties={i} />;
-      })}
-    </div>
+    <>
+      {title && <h4 className="tableHeading">{title}</h4>}
+      <div className="table">
+        <Row fields properties={Object.keys(items[0])} />
+        {items.map((i) => {
+          return <Row key={i.id} properties={i} />;
+        })}
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,13 @@
+@use '../root/colors';
 .table {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.tableHeading {
+  color: colors.$tertiary;
+  margin: 2.5rem auto 0;
+  text-align: center;
 }
