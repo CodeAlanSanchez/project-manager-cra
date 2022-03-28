@@ -12,16 +12,22 @@ interface Props {
 
 const FullProject: React.FC<Props> = ({ project }: Props) => {
   const dispatch = useAppDispatch();
-  const keys = { name: '', description: '', status: '' };
-  const [form, setForm] = useState({
-    ...keys,
+  const bugKeys = { name: '', description: '', status: '' };
+  const inviteKeys = { username: '' };
+  const [bugForm, setBugForm] = useState({
+    ...bugKeys,
   });
+  const [inviteForm, setInviteForm] = useState({ ...inviteKeys });
   const [showBug, setShowBug] = useState(true);
   const [visible, setVisible] = useState(false);
   const users = project.members.map((m: any) => m.user);
 
   const handleSubmit = () => {
-    dispatch(createBug(project.id, form));
+    if (showBug) {
+      dispatch(createBug(project.id, bugForm));
+    } else {
+      // dispatch(inviteUser(project.id, userForm));
+    }
   };
 
   return (
@@ -47,25 +53,50 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             <Table title="Members" items={users} />
           )}
         </div>
-        {visible && (
-          <MyDialog setVisible={() => setVisible((prev) => !prev)}>
-            <MyForm
-              form={form}
-              setForm={setForm}
-              title="Create Bug"
-              keys={{ ...keys }}
-              onSubmit={handleSubmit}
-            />
-          </MyDialog>
+        {visible ? (
+          showBug ? (
+            <MyDialog setVisible={() => setVisible((prev) => !prev)}>
+              <MyForm
+                form={bugForm}
+                setForm={setBugForm}
+                title="Create Bug"
+                keys={{ ...bugKeys }}
+                onSubmit={handleSubmit}
+              />
+            </MyDialog>
+          ) : (
+            <MyDialog setVisible={() => setVisible((prev) => !prev)}>
+              <MyForm
+                form={inviteForm}
+                setForm={setInviteForm}
+                title="Invite User"
+                keys={{ ...inviteKeys }}
+                onSubmit={handleSubmit}
+              />
+            </MyDialog>
+          )
+        ) : (
+          ''
         )}
-        <Button
-          styles={{ margin: '8rem auto' }}
-          onClick={() => setVisible((prev) => !prev)}
-          rounded
-          lg
-        >
-          Create Bug
-        </Button>
+        {showBug ? (
+          <Button
+            styles={{ margin: '8rem auto' }}
+            onClick={() => setVisible((prev) => !prev)}
+            rounded
+            lg
+          >
+            Create Bug
+          </Button>
+        ) : (
+          <Button
+            styles={{ margin: '8rem auto' }}
+            onClick={() => setVisible((prev) => !prev)}
+            rounded
+            lg
+          >
+            Invite User
+          </Button>
+        )}
       </div>
     </section>
   );
