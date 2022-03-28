@@ -1,11 +1,10 @@
 import { clearProjectsError, getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
 import AddButton from 'components/Button/AddButton';
-import Button from 'components/Button/Button';
 import Dialog from 'components/Dialog';
 import Error from 'components/Error';
-import { Project } from 'components/Project';
 import ProjectForm from 'components/ProjectForm';
+import { Table } from 'components/Table';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import 'styles/pages/_projects.scss';
@@ -48,20 +47,23 @@ const Projects: React.FC = () => {
         </Dialog>
       )}
       <div className="content">
-        <h4 className="heading">Projects</h4>
         {error?.field && <Error error={error} />}
-        {loading && <div>Loading...</div>}
-
-        {projects.length > 0
-          ? projects.map((p: any) => {
-              return <Project key={p.id} project={p} />;
-            })
-          : !loading && (
-              <h5>You have no projects, create one to get started!</h5>
-            )}
-        <div className="floatButton">
-          <AddButton sm onClick={() => setShowDialog((prev) => !prev)} />
-        </div>
+        {loading && <h4>Loading...</h4>}
+        {projects.length && (
+          <>
+            <Table
+              view
+              title="Projects"
+              items={projects.map((p: any) => {
+                delete p.members;
+                return p;
+              })}
+            />
+            <div className="floatButton">
+              <AddButton sm onClick={() => setShowDialog((prev) => !prev)} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
