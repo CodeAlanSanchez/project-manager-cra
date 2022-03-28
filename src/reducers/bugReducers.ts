@@ -12,9 +12,12 @@ export default (bugs = [], action: any) => {
       return bugs;
     case FETCH_BUG:
     case FETCH_BUGS:
-      return action.payload;
+      let items = action.payload.map((i: any) => {
+        return { ...i, creator: i.creator.id };
+      });
+      return items;
     case CREATE_BUG:
-      return [...bugs, action.payload];
+      return [...bugs, { ...action.payload, project: null }];
     case UPDATE_BUG:
       return bugs.map((bug: any) =>
         bug.id === action.payload.id ? action.payload : bug

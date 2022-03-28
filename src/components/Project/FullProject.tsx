@@ -1,10 +1,10 @@
-import { createBug } from 'actions/bugActions';
+import { createBug, getBugs } from 'actions/bugActions';
 import Button from 'components/Button/Button';
 import MyDialog from 'components/Dialog';
 import MyForm from 'components/Form';
 import { Table } from 'components/Table';
-import { useAppDispatch } from 'hooks';
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { useEffect, useState } from 'react';
 
 interface Props {
   project: any;
@@ -14,9 +14,11 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
   const dispatch = useAppDispatch();
   const bugKeys = { name: '', description: '', status: '' };
   const inviteKeys = { username: '' };
+  const bugs = useAppSelector((state) => state.bugs);
   const [bugForm, setBugForm] = useState({
     ...bugKeys,
   });
+  const [loading, setLoading] = useState(true);
   const [inviteForm, setInviteForm] = useState({ ...inviteKeys });
   const [showBug, setShowBug] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -28,7 +30,12 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
     } else {
       // dispatch(inviteUser(project.id, userForm));
     }
+    dispatch(getBugs(project.id, setLoading));
   };
+
+  useEffect(() => {
+    dispatch(getBugs(project.id, setLoading));
+  }, []);
 
   return (
     <section className="projectPage">
@@ -47,8 +54,14 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
               Members
             </Button>
           </div>
-          {showBug ? (
-            <Table title="Bugs" items={project.bugs} />
+          {loading ? (
+            <h4 style={{ margin: '5rem auto', width: 'fit-content' }}>
+              Loading...
+            </h4>
+          ) : showBug ? (
+            <>
+              <Table title="Bugs" items={bugs} />
+            </>
           ) : (
             <Table title="Members" items={users} />
           )}
