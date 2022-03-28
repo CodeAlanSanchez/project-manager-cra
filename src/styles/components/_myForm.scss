@@ -14,13 +14,13 @@
 }
 
 .table {
-  width: min(90%, 120rem);
+  width: min(95%, 130rem);
   margin: auto;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, min(33%, 33rem));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 0.5fr));
   width: 100%;
   border: 0.1rem solid colors.$lightGray;
   border-bottom: 0.1rem solid colors.$darkWhite;
@@ -28,7 +28,9 @@
   &.fields {
     border: none;
     .rowItem {
+      width: fit-content;
       p {
+        width: fit-content;
         font-weight: 500;
         color: colors.$secondary;
         text-transform: capitalize;
@@ -38,8 +40,10 @@
   }
   .rowItem {
     padding: 1.5rem;
+    width: 100%;
     p {
       text-overflow: ellipsis;
+      width: 100%;
       white-space: nowrap;
       overflow: hidden;
       color: colors.$tertiary;
