@@ -1,7 +1,7 @@
 @use '../root/colors';
 
 .hero {
-  padding: 15rem 15%;
+  padding: 15rem min(15%, 20rem);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -10,11 +10,11 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    margin-top: 10rem;
+    margin: 3vh 0 5rem;
     min-height: 17.5rem;
   }
   .imageContainer {
-    width: 60rem;
+    width: min(100%, 60rem);
   }
   .imageContainer img {
     width: 100%;

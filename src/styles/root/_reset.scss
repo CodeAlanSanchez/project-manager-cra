@@ -98,14 +98,30 @@ a:hover {
   color: darken(colors.$primary, 25);
 }
 
-@media only screen and (min-width: 3840px) {
+// 720p monitors
+@media only screen and (min-width: 1280px) {
   html {
-    font-size: 125%;
+    font-size: 46.875%;
   }
 }
 
-@media only screen and (max-width: 1280px) {
+// 1080p monitors
+@media only screen and (min-width: 1920px) {
   html {
-    font-size: 46.875%;
+    font-size: 62.5%;
+  }
+}
+
+// 1440p monitors
+@media only screen and (min-width: 2560px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+// 4K monitors
+@media only screen and (min-width: 3840px) {
+  html {
+    font-size: 125%;
   }
 }
