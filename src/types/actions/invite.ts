@@ -1,0 +1,3 @@
+export const ACCEPT_INVITE = 'ACCEPT_INVITE';
+export const DECLINE_INVITE = 'DECLINE_INVITE';
+export const SEND_INVITE = 'SEND_INVITE';
