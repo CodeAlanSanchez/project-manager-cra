@@ -1,5 +1,40 @@
+@use '../root/colors';
+
 .projectThing {
-  .projectTabs {
+  .projectInfo {
+    border: 1px solid colors.$lightGray;
+    border-bottom: 1px solid colors.$darkWhite;
+    border-radius: 5px;
+    gap: 5rem;
+    width: fit-content;
+    margin: 3rem auto;
+    padding: 2rem 3rem 2.5rem;
+    // display: flex;
+    // flex-flow: column nowrap;
+    display: grid;
+    grid-template-areas: 'tl tr' 'bl br';
+    width: min(95%, 130rem);
+    p {
+      font-weight: 500;
+      color: colors.$secondary;
+    }
+    h5 {
+      font-weight: 300;
+    }
+    .projectName {
+      grid-area: tl;
+    }
+    .projectDescription {
+      grid-area: tr;
+      // text-align: right;
+    }
+    .projectId {
+      grid-area: bl;
+    }
+    .projectStatus {
+      grid-area: br;
+      // text-align: right;
+    }
   }
   .projectContent {
     .actions {
