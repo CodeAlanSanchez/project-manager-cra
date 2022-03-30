@@ -28,3 +28,12 @@ export const createBug = (id: any, bug: any) =>
   axiosInstance.post(`api/project/${id}/bug`, bug);
 export const updateBug = (id: any, bug: any) =>
   axiosInstance.put(`api/bug/${id}`, bug);
+
+export const invite = (projectId: number, receiverId: number) =>
+  axiosInstance.post('api/invite', { projectId, receiverId });
+
+export const acceptInvite = (id: number) =>
+  axiosInstance.post(`api/invite/${id}/accept`);
+
+export const declineInvite = (id: number) =>
+  axiosInstance.post(`api/invite/${id}/decline`);
