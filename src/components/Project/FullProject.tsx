@@ -40,9 +40,11 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
   return (
     <section className="projectPage">
       <div className="projectThing">
-        <h4 style={{ margin: '5rem auto', width: 'fit-content' }}>
-          Project Info
-        </h4>
+        <h1
+          style={{ margin: '5rem auto', width: 'fit-content', fontWeight: 300 }}
+        >
+          Project
+        </h1>
         <div className="projectInfo">
           <div className="infoItem projectName">
             <p>Name</p>

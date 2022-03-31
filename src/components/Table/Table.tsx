@@ -19,7 +19,7 @@ const Table: React.FC<Props> = ({ view, title, items }: Props) => {
   }
   return (
     <>
-      {title && <h4 className="tableHeading">{title}</h4>}
+      {title && <h1 className="tableHeading">{title}</h1>}
       <div className="table">
         <Row view={view} fields properties={Object.keys(items[0])} />
         {items.map((i) => (
