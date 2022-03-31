@@ -33,7 +33,21 @@ export const me = () => async (dispatch: any) => {
   try {
     const { data } = await api.me();
 
-    dispatch({ type: 'LOGIN', payload: data });
+    dispatch({ type: 'ME', payload: data });
+  } catch (error: any) {
+    // const { field, message } = error?.response?.data.error;
+    // dispatch({
+    //   type: 'CREATE_AUTH_ERROR',
+    //   payload: { field, message },
+    // });
+  }
+};
+
+export const logout = () => async (dispatch: any) => {
+  try {
+    const { data } = await api.logout();
+
+    dispatch({ type: 'LOG_OUT', payload: data });
   } catch (error: any) {
     const { field, message } = error?.response?.data.error;
     dispatch({
