@@ -1,0 +1,35 @@
+@use '../root/colors';
+
+.fullAccount {
+  min-height: 100vh;
+  padding-top: 8rem;
+  width: min(95%, 130rem);
+  margin-inline: auto;
+  .accountHeading {
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+  .accountGrid {
+    display: grid;
+    grid-template-areas: 'email username' 'joined .';
+    .email {
+      grid-area: email;
+    }
+    .username {
+      grid-area: username;
+    }
+    .joined {
+      grid-area: joined;
+    }
+    .infoHeading {
+      color: colors.$secondary;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .info {
+      font-weight: 300;
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
