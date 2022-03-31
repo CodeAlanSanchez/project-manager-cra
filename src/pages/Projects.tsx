@@ -1,3 +1,4 @@
+import { me } from 'actions/authActions';
 import { clearProjectsError, getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
 import AddButton from 'components/Button/AddButton';
@@ -15,9 +16,12 @@ const Projects: React.FC = () => {
   const [showDialog, setShowDialog] = useState(false);
   const projects = useAppSelector((state) => state.projects);
   const error = useAppSelector((state) => state.projectsError);
+  const auth = useAppSelector((state) => state.auth);
 
   useEffect(() => {
+    console.log(error);
     dispatch(getProjects(setLoading));
+    dispatch(me());
   }, [dispatch]);
 
   const handleClose = () => {
@@ -28,7 +32,7 @@ const Projects: React.FC = () => {
     dispatch(clearProjectsError());
   };
 
-  if (error?.field === 'authentication') {
+  if (error?.field === 'authentication' && !auth.email) {
     return (
       <div className="projects">
         <div className="content">
