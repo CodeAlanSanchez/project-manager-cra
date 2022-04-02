@@ -1,11 +1,10 @@
-import { me } from 'actions/authActions';
-import { clearProjectsError, getProjects } from 'actions/projectActions';
+import { getProjects } from 'actions/projectActions';
 import AuthForm from 'components/AuthForm';
 import AddButton from 'components/Button/AddButton';
 import Dialog from 'components/Dialog';
 import Error from 'components/Error';
 import ProjectForm from 'components/ProjectForm';
-import { Table } from 'components/Table';
+import ProjectsList from 'components/Projects';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import 'styles/pages/_projects.scss';
@@ -15,21 +14,16 @@ const Projects: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [showDialog, setShowDialog] = useState(false);
   const projects = useAppSelector((state) => state.projects);
+
   const error = useAppSelector((state) => state.projectsError);
   const auth = useAppSelector((state) => state.auth);
 
   useEffect(() => {
-    console.log(error);
     dispatch(getProjects(setLoading));
-    dispatch(me());
-  }, [dispatch]);
+  }, [dispatch, auth]);
 
   const handleClose = () => {
     setShowDialog(false);
-  };
-
-  const clearErrors = () => {
-    dispatch(clearProjectsError());
   };
 
   if (error?.field === 'authentication' && !auth.email) {
@@ -50,24 +44,15 @@ const Projects: React.FC = () => {
           <ProjectForm onSubmit={handleClose} />
         </Dialog>
       )}
-      <div className="content">
-        {error?.field && <Error error={error} />}
-        {loading && <h4>Loading...</h4>}
-        {projects.length && (
-          <>
-            <Table
-              view
-              title="Projects"
-              items={projects.map((p: any) => {
-                delete p.members;
-                return p;
-              })}
-            />
-            <div className="floatButton">
-              <AddButton sm onClick={() => setShowDialog((prev) => !prev)} />
-            </div>
-          </>
-        )}
+      {loading ? (
+        <h2 style={{ fontWeight: 300, margin: '0 auto', textAlign: 'center' }}>
+          Loading...
+        </h2>
+      ) : (
+        <ProjectsList projects={projects} />
+      )}
+      <div className="floatButton">
+        <AddButton sm onClick={() => setShowDialog((prev) => !prev)} />
       </div>
     </div>
   );
