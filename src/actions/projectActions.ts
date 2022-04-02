@@ -55,7 +55,7 @@ export const createProject = (project: any) => async (dispatch: any) => {
   try {
     const { data } = await api.createProject(project);
 
-    dispatch({ type: CREATE_PROJECT, payload: data.projects });
+    dispatch({ type: CREATE_PROJECT, payload: data.project });
   } catch (error: any) {
     const { field, message } = error.response.data.error;
     dispatch({
@@ -70,7 +70,7 @@ export const updateProject =
     try {
       const { data } = await api.updateProject(id, project);
 
-      dispatch({ type: UPDATE_PROJECT, payload: data.projects });
+      dispatch({ type: UPDATE_PROJECT, payload: data.project });
     } catch (error) {
       console.error(error);
     }
@@ -80,7 +80,7 @@ export const deleteProject = (id: number) => async (dispatch: any) => {
   try {
     const { data } = await api.deleteProject(id);
 
-    dispatch({ type: DELETE_PROJECT, payload: data.projects });
+    dispatch({ type: DELETE_PROJECT, payload: data.project });
   } catch (error) {
     console.error(error);
   }
