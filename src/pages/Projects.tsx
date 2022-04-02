@@ -4,11 +4,7 @@ import AddButton from 'components/Button/AddButton';
 import Dialog from 'components/Dialog';
 import Error from 'components/Error';
 import ProjectForm from 'components/ProjectForm';
-<<<<<<< HEAD
 import ProjectsList from 'components/ProjectsList';
-=======
-import ProjectsList from 'components/Projects';
->>>>>>> dbcb4ac71ae67473f7e499edaff206fb79e58525
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import 'styles/pages/_projects.scss';
