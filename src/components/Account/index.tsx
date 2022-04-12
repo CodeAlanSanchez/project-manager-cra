@@ -1,11 +1,13 @@
 import { logout } from 'actions/authActions';
 import Button from 'components/Button/Button';
+import { Table } from 'components/Table';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 
 const FullAccount: React.FC = () => {
   const dispatch = useAppDispatch();
   const auth = useAppSelector((state) => state.auth);
+  const invites = useAppSelector((state) => state.auth);
   const [date, setDate] = useState('');
 
   useEffect(() => {
@@ -34,6 +36,7 @@ const FullAccount: React.FC = () => {
           <h5 className="info">{date}</h5>
         </div>
       </div>
+      <Table title="Project Invites" items={invites} view />
       <Button rounded onClick={handleLogout}>
         Log Out
       </Button>
