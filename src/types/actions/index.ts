@@ -15,6 +15,7 @@ export {
 } from 'types/actions/bug';
 
 export {
+  FETCH_INVITE,
   ACCEPT_INVITE,
   DECLINE_INVITE,
   SEND_INVITE,
