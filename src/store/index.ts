@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import projectErrorReducer from 'reducers/projectErrorReducer';
 import authErrorReducer from 'reducers/authErrorReducer';
 import bugReducers from 'reducers/bugReducers';
+import inviteReducer from 'reducers/inviteReducer';
 
 const reducers = combineReducers({
   bugs: bugReducers,
@@ -12,6 +13,7 @@ const reducers = combineReducers({
   projectsError: projectErrorReducer,
   auth: authReducer,
   authError: authErrorReducer,
+  invites: inviteReducer,
 });
 
 const composeEnhancers =

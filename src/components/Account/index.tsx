@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const FullAccount: React.FC = () => {
   const dispatch = useAppDispatch();
   const auth = useAppSelector((state) => state.auth);
-  const invites = useAppSelector((state) => state.auth);
+  const invites = useAppSelector((state) => state.invites);
   const [date, setDate] = useState('');
 
   useEffect(() => {
