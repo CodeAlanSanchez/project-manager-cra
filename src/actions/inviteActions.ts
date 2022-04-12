@@ -1,4 +1,9 @@
-import { ACCEPT_INVITE, DECLINE_INVITE, SEND_INVITE } from 'types/actions';
+import {
+  ACCEPT_INVITE,
+  DECLINE_INVITE,
+  FETCH_INVITE,
+  SEND_INVITE,
+} from 'types/actions';
 import * as api from 'api';
 
 export const sendInvite =
@@ -29,5 +34,15 @@ export const declineInvite = (id: number) => async (dispatch: any) => {
     dispatch({ type: ACCEPT_INVITE, payload: data });
   } catch (error: any) {
     console.log('Error (decline invite): ' + error.message);
+  }
+};
+
+export const getInvites = () => async (dispatch: any) => {
+  try {
+    const { data } = await api.fetchInvites();
+
+    dispatch({ type: FETCH_INVITE, payload: data });
+  } catch (error: any) {
+    console.log('Error (fetch invites): ' + error.message);
   }
 };
