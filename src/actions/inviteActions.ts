@@ -37,11 +37,13 @@ export const declineInvite = (id: number) => async (dispatch: any) => {
   }
 };
 
-export const getInvites = () => async (dispatch: any) => {
+export const getInvites = (setLoading: Function) => async (dispatch: any) => {
   try {
     const { data } = await api.fetchInvites();
 
-    dispatch({ type: FETCH_INVITE, payload: data });
+    setLoading(false);
+
+    dispatch({ type: FETCH_INVITE, payload: data.invites });
   } catch (error: any) {
     console.log('Error (fetch invites): ' + error.message);
   }
