@@ -7,11 +7,12 @@
   align-items: center;
   width: min(95%, 130rem);
   margin: auto;
+  margin-bottom: 5rem;
 }
 
 .tableHeading {
   color: colors.$tertiary;
-  margin: 2.5rem auto 5rem;
+  margin: 2.5rem auto;
   text-align: center;
   font-weight: 300;
   &.left {

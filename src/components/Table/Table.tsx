@@ -11,10 +11,17 @@ const Table: React.FC<Props> = ({ left, view, title, items }: Props) => {
   if (items.length === 0) {
     return (
       <>
-        {title && <h4 className="tableHeading">{title}</h4>}
-        <p style={{ margin: '2.5rem auto', width: 'fit-content' }}>
+        {title && <h1 className={`tableHeading ${left && 'left'}`}>{title}</h1>}
+        <h6
+          style={{
+            width: '100%',
+            marginBottom: '5rem',
+            textAlign: left ? 'left' : 'center',
+            fontWeight: 400,
+          }}
+        >
           No Items Found...
-        </p>
+        </h6>
       </>
     );
   }
