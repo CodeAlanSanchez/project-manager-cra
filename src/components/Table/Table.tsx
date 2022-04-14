@@ -4,9 +4,10 @@ interface Props {
   items: any[];
   title?: any;
   view?: boolean;
+  left?: boolean;
 }
 
-const Table: React.FC<Props> = ({ view, title, items }: Props) => {
+const Table: React.FC<Props> = ({ left, view, title, items }: Props) => {
   if (items.length === 0) {
     return (
       <>
@@ -19,7 +20,7 @@ const Table: React.FC<Props> = ({ view, title, items }: Props) => {
   }
   return (
     <>
-      {title && <h1 className="tableHeading">{title}</h1>}
+      {title && <h1 className={`tableHeading ${left && 'left'}`}>{title}</h1>}
       <div className="table">
         <Row view={view} fields properties={Object.keys(items[0])} />
         {items.map((i) => (
