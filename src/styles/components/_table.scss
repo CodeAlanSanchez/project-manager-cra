@@ -1,9 +1,12 @@
 @use '../root/colors';
+
 .table {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  width: min(95%, 130rem);
+  margin: auto;
 }
 
 .tableHeading {
@@ -11,4 +14,7 @@
   margin: 2.5rem auto 5rem;
   text-align: center;
   font-weight: 300;
+  &.left {
+    text-align: left;
+  }
 }

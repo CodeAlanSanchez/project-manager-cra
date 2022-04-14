@@ -33,3 +33,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 50rem) {
+  .fullAccount {
+    .accountGrid {
+      grid-template-areas: 'email' 'username' 'joined';
+    }
+  }
+}
