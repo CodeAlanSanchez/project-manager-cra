@@ -9,12 +9,13 @@ const ProjectsList: React.FC<Props> = ({ projects }: Props) => {
     <div className="content">
       {projects.length > 0 && (
         <Table
-          view
           title="Projects"
           items={projects.map((p: any) => {
             delete p.members;
             return p;
           })}
+          sublink="project"
+          view
         />
       )}
       {projects.length === 0 && <Table title="Projects" items={[]}></Table>}
