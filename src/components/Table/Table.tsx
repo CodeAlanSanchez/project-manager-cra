@@ -5,9 +5,16 @@ interface Props {
   title?: any;
   view?: boolean;
   left?: boolean;
+  sublink?: string;
 }
 
-const Table: React.FC<Props> = ({ left, view, title, items }: Props) => {
+const Table: React.FC<Props> = ({
+  sublink = '',
+  left,
+  view,
+  title,
+  items,
+}: Props) => {
   if (items.length === 0) {
     return (
       <>
@@ -31,7 +38,7 @@ const Table: React.FC<Props> = ({ left, view, title, items }: Props) => {
       <div className="table">
         <Row view={view} fields properties={Object.keys(items[0])} />
         {items.map((i) => (
-          <Row view={view} key={i.id} properties={i} />
+          <Row sublink={sublink} view={view} key={i.id} properties={i} />
         ))}
       </div>
     </>

@@ -63,6 +63,7 @@ const FullAccount: React.FC = () => {
               delete i.senderId;
               return i;
             })}
+            sublink="invite"
             view
           />
           <Table
@@ -73,6 +74,7 @@ const FullAccount: React.FC = () => {
               delete i.receiverId;
               return i;
             })}
+            sublink="invite"
             view
           />
           {/* <Table
