@@ -36,7 +36,7 @@
     justify-content: center;
     flex-flow: row wrap;
     .item {
-      margin: 0 5rem;
+      margin: 3rem 5rem;
       text-align: center;
     }
   }
@@ -51,5 +51,16 @@
   }
   p {
     width: 50rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    .description {
+      .title,
+      h5 {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }
