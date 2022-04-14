@@ -11,6 +11,8 @@ const FullAccount: React.FC = () => {
   const invites = useAppSelector((state) => state.invites);
   const [loading, setLoading] = useState(true);
   const [date, setDate] = useState('');
+  const [outInvites, setOutInvites] = useState([]);
+  const [InInvites, setInInvites] = useState([]);
 
   useEffect(() => {
     const shortDate = new Date(auth.createdAt).toLocaleDateString('en-US');
@@ -18,6 +20,14 @@ const FullAccount: React.FC = () => {
 
     dispatch(getInvites(setLoading));
   }, [auth]);
+
+  useEffect(() => {
+    console.log('auth: ' + auth.id);
+
+    setInInvites(invites.filter((i: any) => i.receiverId === auth.id));
+
+    setOutInvites(invites.filter((i: any) => i.senderId === auth.id));
+  }, [invites]);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -40,11 +50,53 @@ const FullAccount: React.FC = () => {
           <h5 className="info">{date}</h5>
         </div>
       </div>
-      <Button rounded onClick={handleLogout}>
+      <Button styles={{ marginBottom: '5rem' }} rounded onClick={handleLogout}>
         Log Out
       </Button>
       {!loading ? (
-        <Table title="Project Invites" items={invites} view />
+        <>
+          <Table
+            left
+            title="Sent Invites"
+            items={outInvites.map((i: any) => {
+              delete i.createdAt;
+              delete i.senderId;
+              return i;
+            })}
+            view
+          />
+          <Table
+            left
+            title="Received Invites"
+            items={InInvites.map((i: any) => {
+              delete i.createdAt;
+              delete i.receiverId;
+              return i;
+            })}
+            view
+          />
+          {/* <Table
+          left
+          title="Received Invites"
+          items={invites.map((i: any) => {
+            delete i.createdAt;
+            if (i.receivedId === auth.id) {
+              // i.sender = i.senderId;
+              // delete i.senderId;
+              // delete i.receivedId;
+              console.log('receiver');
+            } else if (i.senderId === auth.id) {
+              // i.receiver = i.receivedId;
+              // delete i.senderId;
+              // delete i.receivedId;
+              console.log('sender');
+            }
+            // console.log(i);
+            return i;
+          })}
+          view
+        /> */}
+        </>
       ) : (
         <>
           <h4 className="tableHeading">Project Invites</h4>
