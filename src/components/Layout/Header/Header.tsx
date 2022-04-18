@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import 'styles/components/_header.scss';
+import HamburgerMenu from './HamburgerMenu.tsx';
 
 const Header: React.FC = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <ul className="list">
+        <HamburgerMenu />
+        <ul className="navigation desktop list">
           <li className="listItem logo">
             <Link to={''}>Hira</Link>
           </li>

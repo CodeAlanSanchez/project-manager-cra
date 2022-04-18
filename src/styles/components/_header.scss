@@ -5,6 +5,32 @@
   width: 100%;
 }
 
+.hamburger svg {
+  aspect-ratio: 1;
+  width: 35px;
+}
+
+.navigation {
+  &.hamburger {
+    display: none;
+  }
+  &.desktop {
+    display: contents;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  background-color: #ffffff;
+  width: 0;
+  height: 100%;
+  width: 100%;
+  transition: width 200ms linear;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 5rem);
+  gap: .2rem;
+}
+
 .navbar {
   height: 100%;
   padding: 1.5rem 16.5%;
@@ -29,6 +55,17 @@
           color: colors.$primary;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    &.hamburger {
+      display: contents;
+    }
+    &.desktop {
+      display: none;
     }
   }
 }
