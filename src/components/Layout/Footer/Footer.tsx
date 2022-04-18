@@ -6,18 +6,18 @@ const Footer: React.FC = () => {
       <div className="content">
         <div>
           <p className="heading">HERE</p>
-          <a href="/register" className="link">
+          <a href="/account" className="link">
             Register
           </a>
-          <a href="/login" className="link">
+          <a href="/account#login" className="link">
             Login
           </a>
           <a href="/home" className="link">
             Home
           </a>
-          <a href="/about-us" className="link">
+          {/* <a href="/about-us" className="link">
             About
-          </a>
+          </a> */}
           <a href="/projects" className="link">
             Projects
           </a>
