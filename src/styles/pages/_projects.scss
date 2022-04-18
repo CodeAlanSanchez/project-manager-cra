@@ -1,6 +1,7 @@
 @use '../root/colors';
 
 .projects {
+  min-height: 100vh;
   .heading {
     margin-bottom: 4rem;
   }
@@ -13,8 +14,8 @@
   }
   .floatButton {
     position: fixed;
-    right: 5%;
-    bottom: 5%;
+    right: max(25px, 15%);
+    bottom: max(25px, 15%);
   }
 }
 
