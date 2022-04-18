@@ -55,9 +55,10 @@ const FullAccount: React.FC = () => {
       </Button>
       {!loading ? (
         <>
+          <h3 className="tableHeading left">Sent Invites</h3>
           <Table
             left
-            title="Sent Invites"
+            // title="Sent Invites"
             items={outInvites.map((i: any) => {
               delete i.createdAt;
               delete i.senderId;
@@ -66,9 +67,10 @@ const FullAccount: React.FC = () => {
             sublink="invite"
             view
           />
+          <h3 className="tableHeading left">Received Invites</h3>
           <Table
             left
-            title="Received Invites"
+            // title="Received Invites"
             items={InInvites.map((i: any) => {
               delete i.createdAt;
               delete i.receiverId;
