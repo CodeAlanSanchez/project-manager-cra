@@ -13,7 +13,7 @@ interface Props {
 
 const FullProject: React.FC<Props> = ({ project }: Props) => {
   const dispatch = useAppDispatch();
-  const bugKeys = { name: '', description: '', status: '' };
+  const bugKeys = { name: '', description: '' };
   const inviteKeys = { usernameId: -1 };
   const bugs = useAppSelector((state) => state.bugs);
   const [bugForm, setBugForm] = useState({
