@@ -17,9 +17,9 @@ const Header: React.FC = () => {
           <li className="listItem">
             <Link to={'/projects'}>Projects</Link>
           </li>
-          {/* <li className="listItem">
+          <li className="listItem">
             <Link to={'/about-us'}>About</Link>
-          </li> */}
+          </li>
           <li className="listItem">
             <Link to={'/account'}>Account</Link>
           </li>

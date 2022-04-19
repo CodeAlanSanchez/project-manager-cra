@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
           <a href="/home" className="link">
             Home
           </a>
-          {/* <a href="/about-us" className="link">
+          <a href="/about" className="link">
             About
-          </a> */}
+          </a>
           <a href="/projects" className="link">
             Projects
           </a>

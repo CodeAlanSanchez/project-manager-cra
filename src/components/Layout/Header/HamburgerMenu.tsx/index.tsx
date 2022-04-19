@@ -36,6 +36,9 @@ const HamburgerMenu: React.FC<Props> = () => {
                             <Link to={'/projects'}>Projects</Link>
                         </li>
                         <li className="listItem">
+                        <Link to={'/about'}>About</Link>
+                        </li>
+                        <li className="listItem">
                             <Link to={'/account'}>Account</Link>
                         </li>
                     </ul>
