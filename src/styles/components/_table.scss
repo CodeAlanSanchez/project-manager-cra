@@ -55,9 +55,11 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .row {
+  .row.fields {
     .rowItem {
-      font-size: 1.6rem;
+      p {
+        font-size: 1.6rem;
+      }
     }
   }
 }
