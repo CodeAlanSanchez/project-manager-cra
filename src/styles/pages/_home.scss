@@ -50,7 +50,7 @@
     margin-bottom: 7.5rem;
   }
   p {
-    width: 50rem;
+    width: min(50rem, 90%);
   }
 }
 
