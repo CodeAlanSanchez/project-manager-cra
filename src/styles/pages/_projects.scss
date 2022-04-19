@@ -14,6 +14,7 @@
   }
   .floatButton {
     position: fixed;
+    z-index: 1;
     right: max(25px, 15%);
     bottom: max(25px, 15%);
   }
