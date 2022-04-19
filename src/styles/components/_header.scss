@@ -7,7 +7,12 @@
 
 .hamburger svg {
   aspect-ratio: 1;
-  width: 35px;
+  width: 3.5rem;
+  padding: 1.5rem;
+}
+
+svg.close {
+  padding: 0;
 }
 
 .navigation {
@@ -20,15 +25,33 @@
 }
 
 .sidebar {
+  z-index: 2;
   position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1.5rem;
   background-color: #ffffff;
   width: 0;
   height: 100%;
-  width: 100%;
   transition: width 200ms linear;
   display: grid;
   grid-template-rows: repeat(auto-fit, 5rem);
   gap: .2rem;
+  .listItem {
+    > a {
+      font-size: 3rem;
+      width: 100%;
+      &:hover {
+        background-color: colors.$primary;
+        color: colors.$white;
+        transition: background-color 200ms linear;
+        transition: color 200ms linear;
+      }
+    }
+  }
+  &.active {
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -67,5 +90,8 @@
     &.desktop {
       display: none;
     }
+  }
+  .navbar {
+    padding: 1.5rem;
   }
 }
