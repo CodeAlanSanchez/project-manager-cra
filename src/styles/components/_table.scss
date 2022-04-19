@@ -19,3 +19,45 @@
     text-align: left;
   }
 }
+
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 0.5fr));
+  width: 100%;
+  border: 0.1rem solid colors.$lightGray;
+  border-bottom: 0.1rem solid colors.$darkWhite;
+  margin-bottom: 0.5rem;
+  &.fields {
+    border: none;
+    .rowItem {
+      width: fit-content;
+      p {
+        width: fit-content;
+        font-weight: 500;
+        color: colors.$secondary;
+        text-transform: capitalize;
+        font-size: 2rem;
+      }
+    }
+  }
+  .rowItem {
+    padding: 1.5rem;
+    width: 100%;
+    p {
+      text-overflow: ellipsis;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      color: colors.$tertiary;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .row {
+    .rowItem {
+      font-size: 1.6rem;
+    }
+  }
+}
