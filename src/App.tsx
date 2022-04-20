@@ -1,3 +1,4 @@
+import Bug from 'components/Bug';
 import Layout from 'components/Layout/Layout';
 import { Home, Projects } from 'pages';
 import About from 'pages/About';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
             <Route path="/project/:id" element={<ProjectPage />} />
             <Route path="/account" element={<Account />} />
             <Route path="/about" element={<About />} />
+            <Route path="/bug/:id" element={<Bug />} />
           </Routes>
         </Layout>
       </Router>
