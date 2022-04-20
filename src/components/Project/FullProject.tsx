@@ -35,7 +35,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
 
   useEffect(() => {
     dispatch(getBugs(project.id, setLoading));
-  }, []);
+  }, [dispatch, project.id]);
 
   return (
     <section className="projectPage">
@@ -83,7 +83,7 @@ const FullProject: React.FC<Props> = ({ project }: Props) => {
             </h4>
           ) : showBug ? (
             <>
-              <Table title="Bugs" items={bugs} />
+              <Table title="Bugs" items={bugs} view sublink="bug" />
             </>
           ) : (
             <Table title="Members" items={users} />
