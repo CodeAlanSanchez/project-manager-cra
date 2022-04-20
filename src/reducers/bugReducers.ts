@@ -11,6 +11,7 @@ export default (bugs = [], action: any) => {
     default:
       return bugs;
     case FETCH_BUG:
+      return action.payload;
     case FETCH_BUGS:
       let items = action.payload.map((i: any) => {
         return { ...i, creator: i.creator.id };
@@ -19,9 +20,7 @@ export default (bugs = [], action: any) => {
     case CREATE_BUG:
       return [...bugs, { ...action.payload, project: null }];
     case UPDATE_BUG:
-      return bugs.map((bug: any) =>
-        bug.id === action.payload.id ? action.payload : bug
-      );
+      return action.payload;
     case DELETE_BUG:
       return bugs.filter((project: any) => project.id !== action.payload.id);
   }
