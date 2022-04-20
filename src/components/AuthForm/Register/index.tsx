@@ -2,6 +2,7 @@ import { signIn, signUp } from 'actions/authActions';
 import Button from 'components/Button/Button';
 import Error from 'components/Error';
 import MyInput from 'components/Input';
+import { GUEST_EMAIL, GUEST_PASSWORD } from 'config';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import React, { FormEvent, useState } from 'react';
 import 'styles/components/_form.scss';
@@ -35,7 +36,7 @@ const RegisterForm: React.FC<Props> = ({
   };
 
   const handleGuest = () => {
-    dispatch(signIn({ identifier: 'guest', password: 'guest' }));
+    dispatch(signIn({ identifier: GUEST_EMAIL, password: GUEST_PASSWORD }));
   };
 
   return (

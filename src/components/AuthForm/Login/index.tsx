@@ -2,6 +2,7 @@ import { signIn } from 'actions/authActions';
 import Button from 'components/Button/Button';
 import Error from 'components/Error';
 import MyInput from 'components/Input';
+import { GUEST_EMAIL, GUEST_PASSWORD } from 'config';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { FormEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -40,7 +41,7 @@ const LoginForm: React.FC<Props> = ({
   };
 
   const handleGuest = () => {
-    dispatch(signIn({ identifier: 'guest', password: 'guest' }));
+    dispatch(signIn({ identifier: GUEST_EMAIL, password: GUEST_PASSWORD }));
   };
 
   return (
