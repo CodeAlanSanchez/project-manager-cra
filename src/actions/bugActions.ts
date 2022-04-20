@@ -60,12 +60,12 @@ export const createBug =
     }
   };
 
-export const updateProject =
+export const updateBug =
   (projectId: number, bug: any) => async (dispatch: any) => {
     try {
-      const { data } = await api.updateProject(projectId, bug);
+      const { data } = await api.updateBug(projectId, bug);
 
-      dispatch({ type: UPDATE_BUG, payload: data.bug });
+      dispatch({ type: UPDATE_BUG, payload: data.updatedBug });
     } catch (error) {
       console.error(error);
     }
