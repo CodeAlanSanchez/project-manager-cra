@@ -1,4 +1,4 @@
-import Button from "components/Button/Button";
+import Button from 'components/Button/Button';
 
 interface Props {
   form: any;
@@ -51,9 +51,9 @@ const UpdateBugForm: React.FC<Props> = ({
           setForm({ ...form, status: e.target.value })
         }
       >
-        <option value="1">Open</option>
-        <option value="2">Underway</option>
-        <option value="3">Closed</option>
+        <option value="open">Open</option>
+        <option value="started">Started</option>
+        <option value="closed">Closed</option>
       </select>
       <Button rounded type="submit">
         Update Bug
