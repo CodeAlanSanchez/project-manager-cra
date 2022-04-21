@@ -13,6 +13,7 @@ interface Props {
   xl?: boolean;
   children?: ReactNode;
   outline?: boolean;
+  danger?: boolean;
   type?: 'button' | 'submit' | 'reset';
 }
 
@@ -27,13 +28,16 @@ const Button: React.FC<Props> = ({
   styles,
   children,
   outline,
+  danger,
   type,
 }: Props) => {
   return (
     <button
       className={`btn primary white ${sm && 'sm'} ${lg && 'lg'} ${xl && 'xl'} ${
         classes && classes
-      } ${rounded && 'rounded'} ${link && 'link'} ${outline && 'outline'}`}
+      } ${rounded && 'rounded'} ${link && 'link'} ${outline && 'outline'} ${
+        danger && 'danger'
+      }`}
       type={type}
       style={styles}
       onClick={onClick}
