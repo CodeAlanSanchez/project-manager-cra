@@ -4,11 +4,13 @@ interface Props {
   form: any;
   setForm: Function;
   handleSubmit: Function;
+  handleDelete: Function;
 }
 
 const UpdateBugForm: React.FC<Props> = ({
   form,
   setForm,
+  handleDelete,
   handleSubmit,
 }: Props) => {
   return (
@@ -55,9 +57,20 @@ const UpdateBugForm: React.FC<Props> = ({
         <option value="started">Started</option>
         <option value="closed">Closed</option>
       </select>
-      <Button rounded type="submit">
-        Update Bug
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Button rounded type="submit">
+          Update Bug
+        </Button>
+        <Button
+          danger
+          outline
+          rounded
+          type="button"
+          onClick={() => handleDelete()}
+        >
+          Delete Bug
+        </Button>
+      </div>
     </form>
   );
 };
