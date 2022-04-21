@@ -14,8 +14,8 @@ $fontSize: 2rem;
   }
   &.outline {
     color: $color;
-    border: .1rem solid $color;
-    padding: .8rem 1.3rem;
+    border: 0.1rem solid $color;
+    padding: 0.8rem 1.3rem;
     background: #ffffff00;
     transition: all 100ms linear;
   }
@@ -25,11 +25,11 @@ $fontSize: 2rem;
   }
   &.xs {
     font-size: $fontSize/1.5;
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
   }
   &.sm {
     font-size: $fontSize / 1.2;
-    padding: .8rem 1.2rem;
+    padding: 0.8rem 1.2rem;
   }
   &.lg {
     font-size: $fontSize / 0.8;
@@ -40,17 +40,17 @@ $fontSize: 2rem;
     padding: 1.5rem 2.5rem;
   }
   &.rounded {
-    border-radius: .7rem;
+    border-radius: 0.7rem;
   }
   &.link {
     color: $color;
     padding: 0;
-    border: .2rem solid $color;
+    border: 0.2rem solid $color;
     border: none;
     background: #ffffff00;
     &:hover {
       color: darken($color, 15);
-      border: .2rem solid darken($color, 15);
+      border: 0.2rem solid darken($color, 15);
       border: none;
     }
   }
@@ -88,6 +88,10 @@ $fontSize: 2rem;
 
 .btn.link {
   @include button(colors.$lightPrimary);
+}
+
+.btn.danger {
+  @include button(colors.$high);
 }
 
 .btn.white {
