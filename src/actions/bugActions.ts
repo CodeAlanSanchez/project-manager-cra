@@ -36,10 +36,9 @@ export const getBug =
 
       dispatch({ type: FETCH_BUG, payload: data.bug });
     } catch (error: any) {
-      console.log(error);
       const { field, message } = error.response.data.error;
       dispatch({
-        type: 'CREATE_BUG_ERROR',
+        type: 'CREATE_AUTH_ERROR',
         payload: { field, message },
       });
     }
@@ -54,7 +53,7 @@ export const createBug =
     } catch (error: any) {
       const { field, message } = error.response.data.error;
       dispatch({
-        type: 'CREATE_BUG_ERROR',
+        type: 'CREATE_AUTH_ERROR',
         payload: { field, message },
       });
     }
@@ -66,15 +65,25 @@ export const updateBug =
       const { data } = await api.updateBug(projectId, bug);
 
       dispatch({ type: UPDATE_BUG, payload: data.updatedBug });
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      const { field, message } = error.response.data.error;
+      dispatch({
+        type: 'CREATE_AUTH_ERROR',
+        payload: { field, message },
+      });
     }
   };
 
-  export const deleteBug = (projectId: number) => async (dispatch: any) => {
-    try {
-      const {data} = await api.deleteBug(projectId);
-    } catch (error) {
-      
-    }
+export const deleteBug = (projectId: number) => async (dispatch: any) => {
+  try {
+    const { data } = await api.deleteBug(projectId);
+
+    dispatch({ type: DELETE_BUG, payload: data });
+  } catch (error: any) {
+    const { field, message } = error.response.data.error;
+    dispatch({
+      type: 'CREATE_AUTH_ERROR',
+      payload: { field, message },
+    });
   }
+};
