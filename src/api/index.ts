@@ -29,6 +29,8 @@ export const createBug = (id: any, bug: any) =>
   axiosInstance.post(`api/project/${id}/bug`, bug);
 export const updateBug = (id: any, bug: any) =>
   axiosInstance.put(`api/bug/${id}`, bug);
+export const deleteBug = (id: any) =>
+  axiosInstance.delete(`api/bug/${id}`);
 
 export const invite = (projectId: number, receiverId: number) =>
   axiosInstance.post('api/invite', { projectId, receiverId });

@@ -70,3 +70,11 @@ export const updateBug =
       console.error(error);
     }
   };
+
+  export const deleteBug = (projectId: number) => async (dispatch: any) => {
+    try {
+      const {data} = await api.deleteBug(projectId);
+    } catch (error) {
+      
+    }
+  }
