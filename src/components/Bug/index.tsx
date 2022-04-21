@@ -1,4 +1,5 @@
-import { getBug, updateBug } from 'actions/bugActions';
+import { deleteBug, getBug, updateBug } from 'actions/bugActions';
+import AuthForm from 'components/AuthForm';
 import Button from 'components/Button/Button';
 import Error from 'components/Error';
 import { useAppDispatch, useAppSelector } from 'hooks';
@@ -18,6 +19,8 @@ const Bug: React.FC<Props> = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const dispatch = useAppDispatch();
+  const error = useAppSelector((state) => state.projectsError);
+  const auth = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (!isNaN(Number(id))) {
@@ -45,6 +48,21 @@ const Bug: React.FC<Props> = () => {
     e.preventDefault();
     handleUpdate();
   };
+
+  const handleDelete = () => {
+    dispatch(deleteBug(bug.id));
+  };
+
+  if (error?.field === 'authentication' && !auth.email) {
+    return (
+      <div className="projects">
+        <div className="content">
+          <Error error={error} />
+          <AuthForm />
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return <h3>Loading...</h3>;
@@ -93,6 +111,7 @@ const Bug: React.FC<Props> = () => {
         form={form}
         setForm={setForm}
         handleSubmit={handleSubmit}
+        handleDelete={handleDelete}
       />
     </div>
   );
