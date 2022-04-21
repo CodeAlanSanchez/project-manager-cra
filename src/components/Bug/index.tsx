@@ -1,6 +1,6 @@
+import { clearAuthError } from 'actions/authActions';
 import { deleteBug, getBug, updateBug } from 'actions/bugActions';
 import AuthForm from 'components/AuthForm';
-import Button from 'components/Button/Button';
 import Error from 'components/Error';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import React, { useEffect, useState } from 'react';
@@ -19,10 +19,11 @@ const Bug: React.FC<Props> = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const error = useAppSelector((state) => state.projectsError);
+  const error = useAppSelector((state) => state.authError);
   const auth = useAppSelector((state) => state.auth);
 
   useEffect(() => {
+    dispatch(clearAuthError());
     if (!isNaN(Number(id))) {
       dispatch(getBug(parseInt(id!), setLoading));
     }
@@ -57,7 +58,6 @@ const Bug: React.FC<Props> = () => {
     return (
       <div className="projects">
         <div className="content">
-          <Error error={error} />
           <AuthForm />
         </div>
       </div>
@@ -65,7 +65,7 @@ const Bug: React.FC<Props> = () => {
   }
 
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <h3 style={{ marginInline: 'auto' }}>Loading...</h3>;
   }
 
   return (
