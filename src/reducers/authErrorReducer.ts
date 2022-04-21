@@ -11,7 +11,6 @@ export default (state = initialState, action: any): MyReducer => {
     case 'CLEAR_AUTH_ERROR':
       return { field: '', message: '' };
     case 'CREATE_AUTH_ERROR':
-      console.log(action.payload);
       return {
         field: action.payload.field,
         message: action.payload.message,
